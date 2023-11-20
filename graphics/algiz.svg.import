@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cufu0lr7nlct2"
-path="res://.godot/imported/naudiz.png-1ada9e5df91883af89f5753da42caa81.ctex"
+uid="uid://djpvgqybiplem"
+path="res://.godot/imported/algiz.svg-451e613c62fbd042d224b71d53c6c4bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://runes/png/naudiz.png"
-dest_files=["res://.godot/imported/naudiz.png-1ada9e5df91883af89f5753da42caa81.ctex"]
+source_file="res://graphics/algiz.svg"
+dest_files=["res://.godot/imported/algiz.svg-451e613c62fbd042d224b71d53c6c4bf.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

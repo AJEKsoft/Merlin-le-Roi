@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ovva8eet5xb4"
-path="res://.godot/imported/oþila.svg-98fb2a875fe2d049c9623a97afe15d61.ctex"
+uid="uid://q1lxf657v6yf"
+path="res://.godot/imported/hagalaz.svg-53d8ed3497a445bfaff49f3331694900.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://runes/svg/oþila.svg"
-dest_files=["res://.godot/imported/oþila.svg-98fb2a875fe2d049c9623a97afe15d61.ctex"]
+source_file="res://graphics/hagalaz.svg"
+dest_files=["res://.godot/imported/hagalaz.svg-53d8ed3497a445bfaff49f3331694900.ctex"]
 
 [params]
 

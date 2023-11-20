@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1nu5ci6rkrgr"
-path="res://.godot/imported/naudiz.svg-e965b99d04a2f934fdbeef3e11677e32.ctex"
+uid="uid://bwu2ve8ilubue"
+path="res://.godot/imported/gebo.svg-02763f6882ef41505d0872fe3708fa02.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://runes/svg/naudiz.svg"
-dest_files=["res://.godot/imported/naudiz.svg-e965b99d04a2f934fdbeef3e11677e32.ctex"]
+source_file="res://graphics/gebo.svg"
+dest_files=["res://.godot/imported/gebo.svg-02763f6882ef41505d0872fe3708fa02.ctex"]
 
 [params]
 

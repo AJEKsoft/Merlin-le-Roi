@@ -4,7 +4,7 @@ signal rune_selected(rune:String)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$image.texture = load("res://runes/png/" + self.name + ".png")
+	$image.texture = load("res://graphics/" + self.name + ".svg")
 	$image.scale = Vector2(0.5, 0.5)
 
 	# Set the size of the collision shape to coincide with the image

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c3jpc0fh5gckl"]
 
 [ext_resource type="Script" path="res://rune.gd" id="1_4d0tp"]
-[ext_resource type="Texture2D" uid="uid://ccsjmlvqvviea" path="res://runes/png/background_active.png" id="2_d3bog"]
+[ext_resource type="Texture2D" uid="uid://k2quk7vro88n" path="res://graphics/selected.svg" id="2_3m3hr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_am736"]
 
@@ -15,6 +15,6 @@ shape = SubResource("CircleShape2D_am736")
 
 [node name="background" type="Sprite2D" parent="image"]
 visible = false
-texture = ExtResource("2_d3bog")
+texture = ExtResource("2_3m3hr")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

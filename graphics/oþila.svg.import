@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwu2ve8ilubue"
-path="res://.godot/imported/gebo.svg-f90f96e2a9ba0de846d8f2a79bcb1369.ctex"
+uid="uid://ovva8eet5xb4"
+path="res://.godot/imported/oþila.svg-c18ec6ebf17e82f882705d7dd85b9faa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://runes/svg/gebo.svg"
-dest_files=["res://.godot/imported/gebo.svg-f90f96e2a9ba0de846d8f2a79bcb1369.ctex"]
+source_file="res://graphics/oþila.svg"
+dest_files=["res://.godot/imported/oþila.svg-c18ec6ebf17e82f882705d7dd85b9faa.ctex"]
 
 [params]
 
