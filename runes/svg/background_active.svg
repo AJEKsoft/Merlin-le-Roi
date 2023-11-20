@@ -2,14 +2,17 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="370mm"
-   height="370mm"
-   viewBox="0 0 370 370"
+   width="150"
+   height="150"
+   viewBox="0 0 39.6875 39.6875"
    version="1.1"
    id="svg114"
    inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
    sodipodi:docname="background_active.svg"
    xml:space="preserve"
+   inkscape:export-filename="background_active.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -24,9 +27,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="0.4204826"
-     inkscape:cx="537.47765"
-     inkscape:cy="580.28561"
+     inkscape:zoom="3.3638608"
+     inkscape:cx="44.442981"
+     inkscape:cy="85.615909"
      inkscape:window-width="1280"
      inkscape:window-height="955"
      inkscape:window-x="0"
@@ -84,9 +87,9 @@
      inkscape:label="Warstwa 1"
      inkscape:groupmode="layer"
      id="layer1"><ellipse
-       style="opacity:1;fill:none;stroke:#000000;stroke-width:20.0242;stroke-linecap:round;stroke-linejoin:bevel;stroke-dasharray:120.145, 40.0485;stroke-dashoffset:40.0485;stroke-opacity:1;paint-order:normal"
+       style="opacity:1;fill:none;stroke:#000000;stroke-width:2.01628;stroke-linecap:round;stroke-linejoin:bevel;stroke-dasharray:2.01628, 8.06507;stroke-dashoffset:5.04068;stroke-opacity:1;paint-order:normal"
        id="path190"
-       cx="185.00015"
-       cy="185.04153"
-       rx="174.98773"
-       ry="175.02863" /></g></svg>
+       cx="19.804163"
+       cy="19.89768"
+       rx="18.899113"
+       ry="18.946455" /></g></svg>
