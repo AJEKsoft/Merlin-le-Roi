@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://cpmqq56dyjdg3"]
+[gd_scene load_steps=2 format=3 uid="uid://cpmqq56dyjdg3"]
+
+[ext_resource type="Texture2D" uid="uid://rcngfrq6p0xh" path="res://graphics/rooms/room-base.svg" id="1_shu7c"]
 
 [node name="ui" type="PanelContainer"]
 anchors_preset = 15
@@ -7,6 +9,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.25098)
+layout_mode = 2
+texture = ExtResource("1_shu7c")
+expand_mode = 2
 
 [node name="upper" type="VBoxContainer" parent="."]
 layout_mode = 2

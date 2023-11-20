@@ -15,8 +15,8 @@ func _ready():
 			$image.modulate = Color (1, 0.5, 0)
 			$selection.modulate = Color (1, 0.5, 0)
 		"gemini", "libra", "aquarius":
-			$image.modulate = Color (0.75, 0.75, 1)
-			$selection.modulate = Color (0.75, 0.75, 1)
+			$image.modulate = Color (0.5, 0.5, 1)
+			$selection.modulate = Color (0.5, 0.5, 1)
 		"cancer", "scorpio", "pisces":
 			$image.modulate = Color (0.25, 0.25, 1)
 			$selection.modulate = Color (0.25, 0.25, 1)

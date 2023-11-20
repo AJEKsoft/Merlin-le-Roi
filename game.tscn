@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://ut5g6i5eisoy"]
+[gd_scene load_steps=10 format=3 uid="uid://ut5g6i5eisoy"]
 
 [ext_resource type="PackedScene" uid="uid://cpmqq56dyjdg3" path="res://main_gui.tscn" id="1_ujiw4"]
 [ext_resource type="Script" path="res://game.gd" id="1_ykd1p"]
 [ext_resource type="PackedScene" uid="uid://7khisw5vfwea" path="res://rune_picker.tscn" id="2_dn6q4"]
+[ext_resource type="Texture2D" uid="uid://d2qk7dm78wovp" path="res://graphics/foes/vine monster.svg" id="3_jic3i"]
 [ext_resource type="AudioStream" uid="uid://cwhdkaa407esw" path="res://sound/effects/sequence_begin.wav" id="4_le3hw"]
 [ext_resource type="AudioStream" uid="uid://dambf8qvljm23" path="res://sound/effects/sequence_continue.wav" id="5_0yvgx"]
 [ext_resource type="AudioStream" uid="uid://dx0vymlqk263h" path="res://sound/effects/sequence_fail.wav" id="6_10al3"]
@@ -16,7 +17,11 @@ script = ExtResource("1_ykd1p")
 
 [node name="ui" parent="ui_canvas" instance=ExtResource("1_ujiw4")]
 
-[node name="RunePicker" parent="." instance=ExtResource("2_dn6q4")]
+[node name="Enemy" type="Sprite2D" parent="ui_canvas"]
+position = Vector2(556, 328)
+texture = ExtResource("3_jic3i")
+
+[node name="RunePicker" parent="ui_canvas" instance=ExtResource("2_dn6q4")]
 
 [node name="foe" type="Timer" parent="."]
 wait_time = 3.0
@@ -49,9 +54,9 @@ autoplay = true
 
 [connection signal="foe_death" from="." to="." method="_on_foe_death"]
 [connection signal="player_death" from="." to="." method="_on_player_death"]
-[connection signal="begin_spell" from="RunePicker" to="." method="_on_begin_spell"]
-[connection signal="cast_spell" from="RunePicker" to="." method="_on_cast_spell"]
-[connection signal="continue_spell" from="RunePicker" to="." method="_on_continue_spell"]
-[connection signal="wrong_spell" from="RunePicker" to="." method="_on_wrong_spell"]
+[connection signal="begin_spell" from="ui_canvas/RunePicker" to="." method="_on_begin_spell"]
+[connection signal="cast_spell" from="ui_canvas/RunePicker" to="." method="_on_cast_spell"]
+[connection signal="continue_spell" from="ui_canvas/RunePicker" to="." method="_on_continue_spell"]
+[connection signal="wrong_spell" from="ui_canvas/RunePicker" to="." method="_on_wrong_spell"]
 [connection signal="timeout" from="foe" to="." method="_on_foe_timeout"]
 [connection signal="timeout" from="regen" to="." method="_on_regen_timeout"]

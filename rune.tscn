@@ -13,6 +13,7 @@ script = ExtResource("1_4d0tp")
 shape = SubResource("CircleShape2D_am736")
 
 [node name="backdrop" type="Sprite2D" parent="."]
+modulate = Color(0.827451, 0.827451, 0.827451, 1)
 texture = ExtResource("3_ru3fg")
 
 [node name="selection" type="Sprite2D" parent="."]

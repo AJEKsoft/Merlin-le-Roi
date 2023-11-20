@@ -39,6 +39,9 @@ them. Each spell is made out of at least 2 different symbols. The
 maximum amount of symbols is 12, each for every month and astrological
 sign.
 
+The player needs to cast spells with care: a miscast results in
+unforseen consequences, sometimes good, and sometimes tragic.
+
 A large amount of spells is balanced and designed with care; however,
 as you go later into the game, or decide to continue playing past the
 win condition, spells become randomly generated.
