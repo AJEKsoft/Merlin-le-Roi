@@ -6,19 +6,51 @@
 [node name="RunePicker" type="Node2D"]
 script = ExtResource("1_r5jka")
 
-[node name="algiz" parent="." instance=ExtResource("1_e4dat")]
-position = Vector2(358, 128)
+[node name="aquarius" parent="." instance=ExtResource("1_e4dat")]
+position = Vector2(293, 242)
 
-[node name="gebo" parent="." instance=ExtResource("1_e4dat")]
-position = Vector2(778, 446)
+[node name="aries" parent="." instance=ExtResource("1_e4dat")]
+position = Vector2(382, 147)
 
-[node name="hagalaz" parent="." instance=ExtResource("1_e4dat")]
-position = Vector2(340, 468)
+[node name="cancer" parent="." instance=ExtResource("1_e4dat")]
+position = Vector2(548, 101)
 
-[node name="naudiz" parent="." instance=ExtResource("1_e4dat")]
-position = Vector2(752, 114)
+[node name="capricorn" parent="." instance=ExtResource("1_e4dat")]
+position = Vector2(707, 143)
 
-[connection signal="rune_selected" from="algiz" to="." method="_on_rune_selected"]
-[connection signal="rune_selected" from="gebo" to="." method="_on_rune_selected"]
-[connection signal="rune_selected" from="hagalaz" to="." method="_on_rune_selected"]
-[connection signal="rune_selected" from="naudiz" to="." method="_on_rune_selected"]
+[node name="gemini" parent="." instance=ExtResource("1_e4dat")]
+position = Vector2(818, 206)
+
+[node name="leo" parent="." instance=ExtResource("1_e4dat")]
+position = Vector2(870, 307)
+
+[node name="libra" parent="." instance=ExtResource("1_e4dat")]
+position = Vector2(874, 416)
+
+[node name="pisces" parent="." instance=ExtResource("1_e4dat")]
+position = Vector2(795, 491)
+
+[node name="saggitarius" parent="." instance=ExtResource("1_e4dat")]
+position = Vector2(693, 534)
+
+[node name="scorpio" parent="." instance=ExtResource("1_e4dat")]
+position = Vector2(565, 535)
+
+[node name="taurus" parent="." instance=ExtResource("1_e4dat")]
+position = Vector2(374, 520)
+
+[node name="virgo" parent="." instance=ExtResource("1_e4dat")]
+position = Vector2(251, 398)
+
+[connection signal="rune_selected" from="aquarius" to="." method="_on_rune_selected"]
+[connection signal="rune_selected" from="aries" to="." method="_on_rune_selected"]
+[connection signal="rune_selected" from="cancer" to="." method="_on_rune_selected"]
+[connection signal="rune_selected" from="capricorn" to="." method="_on_rune_selected"]
+[connection signal="rune_selected" from="gemini" to="." method="_on_rune_selected"]
+[connection signal="rune_selected" from="leo" to="." method="_on_rune_selected"]
+[connection signal="rune_selected" from="libra" to="." method="_on_rune_selected"]
+[connection signal="rune_selected" from="pisces" to="." method="_on_rune_selected"]
+[connection signal="rune_selected" from="saggitarius" to="." method="_on_rune_selected"]
+[connection signal="rune_selected" from="scorpio" to="." method="_on_rune_selected"]
+[connection signal="rune_selected" from="taurus" to="." method="_on_rune_selected"]
+[connection signal="rune_selected" from="virgo" to="." method="_on_rune_selected"]

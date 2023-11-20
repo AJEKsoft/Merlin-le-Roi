@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3jpc0fh5gckl"]
+[gd_scene load_steps=5 format=3 uid="uid://c3jpc0fh5gckl"]
 
 [ext_resource type="Script" path="res://rune.gd" id="1_4d0tp"]
-[ext_resource type="Texture2D" uid="uid://k2quk7vro88n" path="res://graphics/selected.svg" id="2_3m3hr"]
+[ext_resource type="Texture2D" uid="uid://k2quk7vro88n" path="res://graphics/ui/rune_selected.svg" id="2_7qqxl"]
+[ext_resource type="Texture2D" uid="uid://65424w201jlb" path="res://graphics/ui/rune_background.svg" id="3_ru3fg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_am736"]
 
@@ -11,10 +12,13 @@ script = ExtResource("1_4d0tp")
 [node name="collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_am736")
 
-[node name="image" type="Sprite2D" parent="."]
+[node name="backdrop" type="Sprite2D" parent="."]
+texture = ExtResource("3_ru3fg")
 
-[node name="background" type="Sprite2D" parent="image"]
+[node name="selection" type="Sprite2D" parent="."]
 visible = false
-texture = ExtResource("2_3m3hr")
+texture = ExtResource("2_7qqxl")
+
+[node name="image" type="Sprite2D" parent="."]
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

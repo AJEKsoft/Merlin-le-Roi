@@ -10,14 +10,12 @@ signal player_death
 func _ready():
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var player_mana_bar = find_child("player-mana-bar")
 	if player_mana_bar.value < player_mana_bar.max_value:
 		player_mana_bar.value = min(player_mana_bar.value + mana_regen_rate * delta, player_mana_bar.max_value)
 	check_death()
-
 
 func check_death():
 	var player_health_bar = find_child("player-health-bar")
@@ -27,7 +25,14 @@ func check_death():
 	if foe_health_bar.value <= 0:
 		emit_signal("foe_death")
 
+func _on_begin_spell():
+	$sequence_begin.play()
+	
+func _on_continue_spell():
+	$sequence_continue.play()
+
 func _on_cast_spell(spell:String):
+	$sequence_success.play()
 	$ui_canvas/ui/spellname.text = spell
 	find_child("player-mana-bar").value -= 10
 	if spell == "fireball":
@@ -37,6 +42,7 @@ func _on_cast_spell(spell:String):
 	pass # Replace with function body.
 
 func _on_wrong_spell():
+	$sequence_fail.play()
 	find_child("spellname").text = "WRONG SPELL"
 
 func spell_fireball():

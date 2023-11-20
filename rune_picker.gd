@@ -3,19 +3,21 @@ class_name Rune
 
 var current_sequence = []
 var spells = {
-	"algiz" : {
-		"gebo" : "heal"
+	"virgo" : {
+		"pisces" : "heal"
 	},
-	"hagalaz" : {
-		"algiz" : "shield"
+	"taurus" : {
+		"gemini" : "shield"
 	},
-	"naudiz" : {
-		"hagalaz" : {
-			"gebo" : "fireball"
+	"aries" : {
+		"leo" : {
+			"saggitarius" : "fireball"
 		}
 	}
 }
 
+signal begin_spell()
+signal continue_spell()
 signal cast_spell(spell:String)
 signal wrong_spell()
 
@@ -27,7 +29,7 @@ func _ready():
 func place_runes():
 	var total_runes = get_child_count()
 	var angle_increment = 2*PI / total_runes
-	var radius = 100.0
+	var radius = 200.0
 
 	for i in range(total_runes):
 		var rune = get_child(i)
@@ -60,5 +62,9 @@ func reset_sequence():
 		rune.unselect()
 
 func _on_rune_selected(rune:String):
+	if current_sequence.size() == 0:
+		emit_signal("begin_spell")
+	else:
+		emit_signal("continue_spell")
 	current_sequence.append(rune)
 	check_sequence()

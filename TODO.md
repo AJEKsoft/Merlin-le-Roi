@@ -9,7 +9,9 @@ Random ideas
 
 - In the future, add lines connecting the symbols
 
+- Make the selection circle spin for some satisfying animation deal
+
 Graphics
 --------
-- [ ] Fix aries symbol
-- [ ] Fix pisces symbol
+
+- [ ] Make background circle for the runes
