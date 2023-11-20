@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://cpmqq56dyjdg3"]
+
+[node name="ui" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="upper" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="upper"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Goblin
+"
+
+[node name="foe-health-bar" type="ProgressBar" parent="upper"]
+layout_mode = 2
+value = 100.0
+
+[node name="spellname" type="Label" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HFlowContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 8
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Mana
+"
+
+[node name="player-mana-bar" type="ProgressBar" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+value = 100.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Health"
+
+[node name="player-health-bar" type="ProgressBar" parent="HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+value = 100.0

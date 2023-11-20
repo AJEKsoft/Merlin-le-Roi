@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://7khisw5vfwea"]
+
+[ext_resource type="PackedScene" uid="uid://c3jpc0fh5gckl" path="res://rune.tscn" id="1_e4dat"]
+[ext_resource type="Script" path="res://rune_picker.gd" id="1_r5jka"]
+
+[node name="RunePicker" type="Node2D"]
+script = ExtResource("1_r5jka")
+
+[node name="algiz" parent="." instance=ExtResource("1_e4dat")]
+position = Vector2(358, 128)
+
+[node name="gebo" parent="." instance=ExtResource("1_e4dat")]
+position = Vector2(778, 446)
+
+[node name="hagalaz" parent="." instance=ExtResource("1_e4dat")]
+position = Vector2(340, 468)
+
+[node name="naudiz" parent="." instance=ExtResource("1_e4dat")]
+position = Vector2(752, 114)
+
+[connection signal="rune_selected" from="algiz" to="." method="_on_rune_selected"]
+[connection signal="rune_selected" from="gebo" to="." method="_on_rune_selected"]
+[connection signal="rune_selected" from="hagalaz" to="." method="_on_rune_selected"]
+[connection signal="rune_selected" from="naudiz" to="." method="_on_rune_selected"]
