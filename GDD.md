@@ -29,9 +29,24 @@ well as smarts is needed to effectively fight through the dungeon.
 
 ### Gameplay
 
-A walkthrough through a typical game session:
+A walkthrough through a typical game session: (...)
 
+#### Spells and spellcasting
 
+Spells are the main method of interaction with the world that the
+player uses. The gameplay revolves around spells and casting
+them. Each spell is made out of at least 2 different symbols. The
+maximum amount of symbols is 12, each for every month and astrological
+sign.
+
+A large amount of spells is balanced and designed with care; however,
+as you go later into the game, or decide to continue playing past the
+win condition, spells become randomly generated.
+
+Fire symbols: Aries, Leo, Saggitarius (hot, dry, ardent)
+Earth symbols: Taurus, Virgo, Capricorn (heavy, cold, dry)
+Air symbols: Gemini, Libra, Aquarius (light, hot, wet)
+Water: Cancer, Scorpio, Pisces (cold, wet, soft)
 
 
 Marketing

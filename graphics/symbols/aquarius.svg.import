@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rcngfrq6p0xh"
-path="res://.godot/imported/room-base.svg-b5a1c4d657f0ca3b090805febc43847c.ctex"
+uid="uid://c8dmafgwvvrm3"
+path="res://.godot/imported/aquarius.svg-c02cd391d1a93a56eebfdee924e22df1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/room-base.svg"
-dest_files=["res://.godot/imported/room-base.svg-b5a1c4d657f0ca3b090805febc43847c.ctex"]
+source_file="res://graphics/symbols/aquarius.svg"
+dest_files=["res://.godot/imported/aquarius.svg-c02cd391d1a93a56eebfdee924e22df1.ctex"]
 
 [params]
 
