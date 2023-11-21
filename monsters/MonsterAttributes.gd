@@ -1,6 +1,6 @@
 extends Resource
 
-class_name MonsterSettings
+class_name MonsterAttributes
 
 @export var health_regen_rate = 1
 @export var max_health = 0
@@ -11,6 +11,3 @@ class_name MonsterSettings
 @export var intelligence = 0
 @export var magic = 0
 @export var attack_speed = 0
-@export var attack_sound : AudioStream
-@export var hurt_sound : AudioStream
-@export var death_sound : AudioStream
