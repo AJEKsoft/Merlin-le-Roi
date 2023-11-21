@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cg84nrhv62a8h"]
+
+[ext_resource type="PackedScene" uid="uid://b03bqjm18dhc5" path="res://monsters/monster.tscn" id="1_7k44s"]
+[ext_resource type="Texture2D" uid="uid://db6rsdtct7p6l" path="res://graphics/enemies/spider.svg" id="2_1tl0w"]
+[ext_resource type="Script" path="res://monsters/MonsterAttributes.gd" id="2_g1yvw"]
+
+[sub_resource type="Resource" id="Resource_7a6y0"]
+script = ExtResource("2_g1yvw")
+health_regen_rate = 1
+max_health = 40
+max_mana = 10
+mana_regen_rate = 1
+strength = 6
+agility = 8
+intelligence = 2
+magic = 3
+attack_speed = 5
+
+[node name="Spider" instance=ExtResource("1_7k44s")]
+attributes = SubResource("Resource_7a6y0")
+
+[node name="image" parent="." index="1"]
+texture = ExtResource("2_1tl0w")
