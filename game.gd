@@ -9,6 +9,8 @@ signal player_attack
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	spawn_foe()
+	$game_canvas/SpellTable.radius = get_viewport_rect().size.y / 3
+	$game_canvas/SpellTable.place_runes()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -21,10 +23,12 @@ func spawn_foe():
 	var monster_scene = load("res://monsters/amethyst deceiver.tscn")
 	var monster = monster_scene.instantiate()
 	monster.health_progress = find_child("foe-health-bar")
-	add_child(monster)
 	monster.death.connect(_on_foe_death)
 	monster.attack.connect(_on_foe_attack)
 	player_attack.connect(monster._on_attacked)
+	monster.position = get_viewport_rect().size / 2
+	find_child("foe-name").text = monster.name
+	$game_canvas.add_child(monster)
 
 func _on_cast_spell(spell:String):
 	$ui_canvas/ui/spellname.text = spell

@@ -15,9 +15,10 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_1x51o")
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="Label" type="Label" parent="upper"]
+[node name="foe-name" type="Label" parent="upper"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 36
 text = "Goblin
 "
 

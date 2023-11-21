@@ -22,7 +22,7 @@ signal cast_spell(spell:String)
 signal wrong_spell
 
 @export var rotation_speed : float = 1 # rotations per minute
-@export var radius = 200.0
+var radius = 200.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -36,7 +36,7 @@ func _process(delta : float):
 
 func _draw():
 	# draw a circle behind the runes
-	draw_circle($runes_circle.position, radius, Color(1,1,1,0.5))
+	draw_arc($runes_circle.position, radius, 0, 2*PI, 64, Color(1,1,1,0.5), 2)
 	for rune in $runes_circle.get_children():
 		# draw a line from the center of the circle to the rune
 		draw_line($runes_circle.position, rune.global_transform.get_origin(), Color(1,1,1,0.5), 2)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://mrsmtj7apaja"]
+[gd_scene load_steps=5 format=3 uid="uid://dmpjsrhgsm1gb"]
 
 [ext_resource type="PackedScene" uid="uid://b03bqjm18dhc5" path="res://monsters/monster.tscn" id="1_eclcv"]
 [ext_resource type="Script" path="res://monsters/MonsterAttributes.gd" id="2_2dgjc"]
