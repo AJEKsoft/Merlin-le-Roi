@@ -1,11 +1,21 @@
 extends Node
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+var spells = {
+	"flame": {
+		"combination": [ "aries", "cancer", "libra" ],
+		"cost": 10,
+		"damage": 20
+	},
+	
+	"bandaid": {
+		"combination": [ "libra", "capricorn" ],
+		"cost": 10,
+		"heal": 15
+	},
+	
+	"quake" : {
+		"combination": [ "capricorn", "libra", "cancer", "aries" ],
+		"cost": 20,
+		"damage": 30
+	}
+}
