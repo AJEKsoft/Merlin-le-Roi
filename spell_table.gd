@@ -21,12 +21,17 @@ signal continue_spell
 signal cast_spell(spell:String)
 signal wrong_spell
 
+@export var rotation_speed : float = 1 # rotations per minute
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	place_runes()
 
-func _update(delta : float):
-	$runes_circle.rotate(delta * deg_to_rad(10))
+func _process(delta : float):
+	var angular_speed = rotation_speed * 2 * PI / 60 # radians per second
+	$runes_circle.rotate(delta * angular_speed)
+	for rune in $runes_circle.get_children():
+		rune.rotate(-delta * angular_speed)
 
 # Place the runes evenly spaced around a circle
 func place_runes():
