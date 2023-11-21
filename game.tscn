@@ -20,10 +20,6 @@ script = ExtResource("1_ykd1p")
 
 [node name="ui" parent="ui_canvas" instance=ExtResource("1_ujiw4")]
 
-[node name="foe" type="Timer" parent="."]
-wait_time = 3.0
-autostart = true
-
 [node name="regen" type="Timer" parent="."]
 wait_time = 0.1
 autostart = true
@@ -49,11 +45,9 @@ stream = ExtResource("8_1otx8")
 volume_db = -16.0
 autoplay = true
 
-[connection signal="foe_death" from="." to="." method="_on_foe_death"]
 [connection signal="player_death" from="." to="." method="_on_player_death"]
 [connection signal="begin_spell" from="game_canvas/RunePicker" to="." method="_on_begin_spell"]
 [connection signal="cast_spell" from="game_canvas/RunePicker" to="." method="_on_cast_spell"]
 [connection signal="continue_spell" from="game_canvas/RunePicker" to="." method="_on_continue_spell"]
 [connection signal="wrong_spell" from="game_canvas/RunePicker" to="." method="_on_wrong_spell"]
-[connection signal="timeout" from="foe" to="." method="_on_foe_timeout"]
 [connection signal="timeout" from="regen" to="." method="_on_regen_timeout"]

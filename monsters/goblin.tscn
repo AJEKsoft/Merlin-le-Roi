@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxfynqe8mynbj"]
+
+[ext_resource type="Script" path="res://monsters/Monster.gd" id="1_yajak"]
+[ext_resource type="Script" path="res://monsters/MonsterSettings.gd" id="2_mdpit"]
+
+[sub_resource type="Resource" id="Resource_iwuhu"]
+script = ExtResource("2_mdpit")
+health_regen_rate = 1
+max_health = 50
+max_mana = 0
+mana_regen_rate = 0
+strength = 5
+agility = 0
+intelligence = 0
+magic = 0
+attack_speed = 0
+
+[node name="Goblin" type="Node2D"]
+script = ExtResource("1_yajak")
+settings = SubResource("Resource_iwuhu")

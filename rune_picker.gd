@@ -35,7 +35,6 @@ func place_runes():
 		var rune = get_child(i)
 		var x = radius * cos(angle_increment * i)
 		var y = radius * sin(angle_increment * i)
-		print(rune.name + " at " + str(x) + ", " + str(y))
 		rune.position = Vector2(x, y) + get_viewport_rect().size/2
 
 func check_sequence():
