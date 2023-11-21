@@ -33,13 +33,9 @@ func _process(delta : float):
 	$runes_circle.rotate(delta * angular_speed)
 	for rune in $runes_circle.get_children():
 		rune.rotate(-delta * angular_speed)
-
 func _draw():
 	# draw a circle behind the runes
 	draw_arc($runes_circle.position, radius, 0, 2*PI, 64, Color(1,1,1,0.5), 2)
-	for rune in $runes_circle.get_children():
-		# draw a line from the center of the circle to the rune
-		draw_line($runes_circle.position, rune.global_transform.get_origin(), Color(1,1,1,0.5), 2)
 
 # Place the runes evenly spaced around a circle
 func place_runes():

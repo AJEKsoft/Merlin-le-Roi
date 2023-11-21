@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://ib7s2txjkplv"]
+[gd_scene load_steps=20 format=3 uid="uid://ib7s2txjkplv"]
 
 [ext_resource type="Script" path="res://spell_table.gd" id="1_r5jka"]
 [ext_resource type="PackedScene" uid="uid://bpok4w27towop" path="res://runes/virgo.tscn" id="2_rbulf"]
+[ext_resource type="Script" path="res://runes_circle.gd" id="2_waarx"]
 [ext_resource type="PackedScene" uid="uid://csw74ajeq0e6a" path="res://runes/gemini.tscn" id="3_2gbx7"]
 [ext_resource type="PackedScene" uid="uid://cr01samdgw0qi" path="res://runes/capricorn.tscn" id="3_3p5ct"]
 [ext_resource type="PackedScene" uid="uid://n65rvjn03kfu" path="res://runes/aquarius.tscn" id="3_ljaqv"]
@@ -23,6 +24,7 @@
 script = ExtResource("1_r5jka")
 
 [node name="runes_circle" type="Node2D" parent="."]
+script = ExtResource("2_waarx")
 
 [node name="aries" parent="runes_circle" instance=ExtResource("11_nali1")]
 position = Vector2(743, 600)
