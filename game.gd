@@ -1,14 +1,20 @@
 extends Node2D
 
-var mana = 100
-var mana_regen_rate = 2
-
 signal player_death
 signal player_attack
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	spawn_foe()
+	# Set up the values of the bars.
+	var player_health_bar = find_child("player-health-bar")
+	player_health_bar.max_value = PlayerState.max_health
+	player_health_bar.value = PlayerState.health
+	
+	var player_mana_bar = find_child("player-mana-bar")
+	player_mana_bar.max_value = PlayerState.max_mana
+	player_mana_bar.value = PlayerState.mana
+	
 	$game_canvas/SpellTable.radius = get_viewport_rect().size.y / 3
 	$game_canvas/SpellTable.place_runes()
 
@@ -16,7 +22,7 @@ func _ready():
 func _process(delta):
 	var player_mana_bar = find_child("player-mana-bar")
 	if player_mana_bar.value < player_mana_bar.max_value:
-		player_mana_bar.value = min(player_mana_bar.value + mana_regen_rate * delta, player_mana_bar.max_value)
+		player_mana_bar.value = min(player_mana_bar.value + PlayerState.mana_regen * delta, player_mana_bar.max_value)
 
 func spawn_foe():
 	# To change the kind of monster we spawn, we change the scene that's loaded.
@@ -47,11 +53,11 @@ func spell_fireball():
 
 func spell_heal():
 	var player_health_bar = find_child("player-health-bar")
-	player_health_bar.value = min(player_health_bar.value + 20, player_health_bar.max_value)
+	player_health_bar.value = min(player_health_bar.value + 5, player_health_bar.max_value)
 
 func _on_regen_timeout():
 	var player_mana_bar = find_child("player-mana-bar")
-	player_mana_bar.value = min(player_mana_bar.value + mana_regen_rate, player_mana_bar.max_value)
+	player_mana_bar.value = min(player_mana_bar.value + PlayerState.mana_regen, player_mana_bar.max_value)
 
 func _on_foe_attack(damage: int):
 	var player_health_bar = find_child("player-health-bar")

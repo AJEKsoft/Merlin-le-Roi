@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 LevelState="*res://level_state.gd"
+PlayerState="*res://player_state.gd"
+SpellData="*res://spell_data.gd"
 
 [display]
 
