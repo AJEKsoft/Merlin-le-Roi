@@ -41,12 +41,15 @@ func spawn_foe():
 
 func _on_cast_spell(spell:String):
 	$ui_canvas/ui/spellname.text = spell
-	PlayerState.mana = max(PlayerState.mana - 10, 0)
-	update_bars()
-	if spell == "fireball":
-		spell_fireball()
-	elif spell == "heal":
-		spell_heal()
+	if PlayerState.mana < 10:
+		find_child("spellname").text = "OUT OF MANA"
+	else:
+		PlayerState.mana = max(PlayerState.mana - 10, 0)
+		update_bars()
+		if spell == "fireball":
+			spell_fireball()
+		elif spell == "heal":
+			spell_heal()
 
 func _on_wrong_spell():
 	find_child("spellname").text = "WRONG SPELL"
