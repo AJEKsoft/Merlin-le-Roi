@@ -58,7 +58,7 @@ func spell_fireball():
 	emit_signal("player_attack", 10)
 
 func spell_heal():
-	PlayerState.health = min(PlayerState.health + 5, PlayerState.health_max)
+	PlayerState.health = min(PlayerState.health + 15, PlayerState.health_max)
 	update_bars()
 
 func _on_regen_timeout():
