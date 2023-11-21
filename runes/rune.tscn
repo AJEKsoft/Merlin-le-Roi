@@ -1,8 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://c3jpc0fh5gckl"]
+[gd_scene load_steps=7 format=3 uid="uid://c3jpc0fh5gckl"]
 
 [ext_resource type="Script" path="res://runes/rune.gd" id="1_mtek6"]
 [ext_resource type="Texture2D" uid="uid://65424w201jlb" path="res://graphics/ui/rune_background.svg" id="2_cvuty"]
+[ext_resource type="Texture2D" uid="uid://twgd77a7r4ox" path="res://graphics/particles/stars.png" id="2_t017n"]
 [ext_resource type="Texture2D" uid="uid://k2quk7vro88n" path="res://graphics/ui/rune_selected.svg" id="3_c1vci"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3b0h1"]
+lifetime_randomness = 1.0
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 0.0
+emission_ring_radius = 100.0
+emission_ring_inner_radius = 100.0
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 80.0
+initial_velocity_max = 120.0
+angular_velocity_min = 131.83
+angular_velocity_max = 131.83
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.1
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_am736"]
 radius = 67.0075
@@ -10,7 +29,14 @@ radius = 67.0075
 [node name="Rune" type="Area2D"]
 script = ExtResource("1_mtek6")
 
+[node name="particles" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_3b0h1")
+texture = ExtResource("2_t017n")
+
 [node name="collision" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_am736")
 
 [node name="backdrop" type="Sprite2D" parent="."]

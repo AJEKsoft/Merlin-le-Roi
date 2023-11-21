@@ -39,15 +39,20 @@ func _draw():
 
 # Place the runes evenly spaced around a circle
 func place_runes():
-	var total_runes = $runes_circle.get_child_count()
+	var total_runes = 0
+	for child in $runes_circle.get_children():
+		if child is Rune:
+			total_runes += 1
 	var angle_increment = 2*PI / total_runes
 
 	$runes_circle.position = get_viewport_rect().size/2
-	for i in range(total_runes):
-		var rune = $runes_circle.get_child(i)
-		var x = radius * cos(angle_increment * i)
-		var y = radius * sin(angle_increment * i)
-		rune.position = Vector2(x, y) 
+	var i = 0
+	for child in $runes_circle.get_children():
+		if child is Rune:
+			var x = radius * cos(angle_increment * i)
+			var y = radius * sin(angle_increment * i)
+			child.position = Vector2(x, y)
+			i += 1
 
 func check_sequence():
 	var current_spell = spells
@@ -68,9 +73,9 @@ func check_sequence():
 		emit_signal("wrong_spell")
 
 func reset_sequence():
+	for rune in current_sequence:
+		$runes_circle.get_node(rune).unselect()
 	current_sequence = []
-	for rune in $runes_circle.get_children():
-		rune.unselect()
 
 func _on_rune_selected(rune:String):
 	if current_sequence.size() == 0:

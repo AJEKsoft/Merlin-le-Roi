@@ -6,9 +6,6 @@ func _ready():
 	pass # Replace with function body.
 
 func _draw():
-	for rune in get_children():
-		# draw a line from the center to the rune
-		draw_line(Vector2(0, 0), rune.position, Color(1, 1, 1), 1, true)
 	# get sequence from parent
 	var sequence = get_parent().current_sequence
 	# draw a line from each rune to the next, and to the mouse cursor
@@ -23,7 +20,11 @@ func _draw():
 		var lastRune = find_child(sequence[sequence.size() - 1])
 		draw_line(lastRune.position, to_local(get_viewport().get_mouse_position()), color, thickness, true)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	queue_redraw()
-	pass
+	if get_parent().current_sequence.size() > 0:
+		$LinkParticles.process_material.color = find_child(get_parent().current_sequence[0]).find_child("image").modulate
+		$LinkParticles.emitting = true
+		$LinkParticles.position = to_local(get_viewport().get_mouse_position())
+	else:
+		$LinkParticles.emitting = false

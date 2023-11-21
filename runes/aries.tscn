@@ -5,6 +5,6 @@
 
 [node name="aries" instance=ExtResource("1_atxwy")]
 
-[node name="image" parent="." index="3"]
+[node name="image" parent="." index="4"]
 modulate = Color(1, 0, 0, 1)
 texture = ExtResource("2_3hk8j")

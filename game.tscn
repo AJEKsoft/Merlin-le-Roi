@@ -10,7 +10,6 @@ script = ExtResource("1_ykd1p")
 [node name="game_canvas" type="CanvasLayer" parent="."]
 
 [node name="SpellTable" parent="game_canvas" instance=ExtResource("2_pqwk0")]
-rotation_speed = 0.5
 
 [node name="ui_canvas" type="CanvasLayer" parent="."]
 

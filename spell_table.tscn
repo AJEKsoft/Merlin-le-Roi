@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://ib7s2txjkplv"]
+[gd_scene load_steps=22 format=3 uid="uid://ib7s2txjkplv"]
 
 [ext_resource type="Script" path="res://spell_table.gd" id="1_r5jka"]
 [ext_resource type="PackedScene" uid="uid://bpok4w27towop" path="res://runes/virgo.tscn" id="2_rbulf"]
@@ -19,12 +19,29 @@
 [ext_resource type="PackedScene" uid="uid://cc10e2a4800gu" path="res://runes/aries.tscn" id="11_nali1"]
 [ext_resource type="PackedScene" uid="uid://bug2gunp0f64e" path="res://runes/sagittarius.tscn" id="12_sikab"]
 [ext_resource type="PackedScene" uid="uid://c6tlwu7o7wnwi" path="res://runes/leo.tscn" id="13_7vata"]
+[ext_resource type="Texture2D" uid="uid://twgd77a7r4ox" path="res://graphics/particles/stars.png" id="15_qpg21"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_71sjh"]
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 200.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.1
 
 [node name="SpellTable" type="Node2D"]
 script = ExtResource("1_r5jka")
 
 [node name="runes_circle" type="Node2D" parent="."]
 script = ExtResource("2_waarx")
+
+[node name="LinkParticles" type="GPUParticles2D" parent="runes_circle"]
+emitting = false
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_71sjh")
+texture = ExtResource("15_qpg21")
 
 [node name="aries" parent="runes_circle" instance=ExtResource("11_nali1")]
 position = Vector2(743, 600)
