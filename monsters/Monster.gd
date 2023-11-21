@@ -6,8 +6,6 @@ class_name Monster
 var health_progress = null 
 
 @export var attributes : MonsterAttributes
-@export var gfx : MonsterGFX
-@export var sfx : MonsterSFX
 
 signal attack(value: int)
 signal death
@@ -26,21 +24,6 @@ func _ready():
 	health_progress.max_value = attributes.max_health
 	health_progress.value = health
 	add_child(attack_timer)
-	if sfx != null:
-		if sfx.death_sound != null:
-			death_sound_player.stream = attributes.death_sound
-		add_child(death_sound_player)
-		if sfx.hurt_sound != null:
-			hurt_sound_player.stream = attributes.hurt_sound
-		add_child(hurt_sound_player)
-		if sfx.attack_sound != null:
-			attack_sound_player.stream = attributes.attack_sound
-		add_child(attack_sound_player)
-	if gfx != null:
-		if gfx.default_image != null:
-			var sprite = Sprite2D.new()
-			sprite.texture = attributes.default_image
-			add_child(sprite)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

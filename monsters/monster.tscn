@@ -1,10 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://b03bqjm18dhc5"]
+[gd_scene load_steps=2 format=3 uid="uid://b03bqjm18dhc5"]
 
 [ext_resource type="Script" path="res://monsters/Monster.gd" id="1_6fro6"]
-[ext_resource type="Script" path="res://monsters/MonsterSettings.gd" id="2_erx8k"]
 
 [node name="Monster" type="Node2D"]
 script = ExtResource("1_6fro6")
 
-[node name="MonsterSettings" type="Node" parent="."]
-script = ExtResource("2_erx8k")
+[node name="sounds" type="Node" parent="."]
+
+[node name="death" type="AudioStreamPlayer" parent="sounds"]
+
+[node name="hurt" type="AudioStreamPlayer" parent="sounds"]
+
+[node name="attack" type="AudioStreamPlayer" parent="sounds"]
+
+[node name="image" type="Sprite2D" parent="."]
