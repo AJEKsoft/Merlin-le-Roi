@@ -3,11 +3,6 @@ extends Node2D
 var mana = 100
 var mana_regen_rate = 2
 
-var monster_scenes = [
-	"res://monsters/level 1/amethyst deceiver.tscn",
-	"res://monsters/level 1/spider.tscn"
-]
-
 signal player_death
 signal player_attack
 
@@ -25,7 +20,8 @@ func _process(delta):
 
 func spawn_foe():
 	# To change the kind of monster we spawn, we change the scene that's loaded.
-	var monster_scene = load(monster_scenes[randi() % monster_scenes.size()])
+	var possible_monsters = LevelState.per_level_enemies[LevelState.current_level]
+	var monster_scene = load(possible_monsters[randi() % possible_monsters.size()])
 	var monster = monster_scene.instantiate()
 	monster.health_progress = find_child("foe-health-bar")
 	monster.death.connect(_on_foe_death)
