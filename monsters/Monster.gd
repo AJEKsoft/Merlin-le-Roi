@@ -21,19 +21,19 @@ func _ready():
 	attack_timer.autostart = true
 	health = attributes.max_health
 	mana = attributes.max_mana
-	health_progress.max_value = attributes.max_health
-	health_progress.value = health
+	health_progress.set_max_value(attributes.max_health)
+	health_progress.new_value(health)
 	add_child(attack_timer)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	health = min(health + attributes.health_regen_rate * delta, attributes.max_health)
 	mana = min(mana + attributes.mana_regen_rate * delta, attributes.max_mana)
-	health_progress.value = health
+	health_progress.new_value(health)
 
 func _on_attacked(damage : int):
 	health -= damage
-	health_progress.value = health
+	health_progress.reduce_value(damage)
 	if health <= 0:
 		death_sound_player.play()
 		emit_signal("death")

@@ -8,12 +8,12 @@ func _ready():
 	spawn_foe()
 	# Set up the values of the bars.
 	var player_health_bar = find_child("player-health-bar")
-	player_health_bar.max_value = PlayerState.max_health
-	player_health_bar.value = PlayerState.health
+	player_health_bar.set_max_value(PlayerState.max_health)
+	player_health_bar.new_value(PlayerState.health)
 	
 	var player_mana_bar = find_child("player-mana-bar")
-	player_mana_bar.max_value = PlayerState.max_mana
-	player_mana_bar.value = PlayerState.mana
+	player_mana_bar.set_max_value(PlayerState.max_mana)
+	player_mana_bar.new_value(PlayerState.mana)
 	
 	$game_canvas/SpellTable.radius = get_viewport_rect().size.y / 3
 	$game_canvas/SpellTable.place_runes()
@@ -39,7 +39,7 @@ func spawn_foe():
 
 func _on_cast_spell(spell:String):
 	$ui_canvas/ui/spellname.text = spell
-	find_child("player-mana-bar").value -= 10
+	find_child("player-mana-bar").reduce_value(10)
 	if spell == "fireball":
 		spell_fireball()
 	elif spell == "heal":
@@ -53,15 +53,11 @@ func spell_fireball():
 
 func spell_heal():
 	var player_health_bar = find_child("player-health-bar")
-	player_health_bar.value = min(player_health_bar.value + 5, player_health_bar.max_value)
-
-func _on_regen_timeout():
-	var player_mana_bar = find_child("player-mana-bar")
-	player_mana_bar.value = min(player_mana_bar.value + PlayerState.mana_regen, player_mana_bar.max_value)
+	player_health_bar.new_value(min(player_health_bar.value + 10, player_health_bar.max_value))
 
 func _on_foe_attack(damage: int):
 	var player_health_bar = find_child("player-health-bar")
-	player_health_bar.value = max(player_health_bar.value - damage, 0)
+	player_health_bar.reduce_value(damage)
 	if player_health_bar.value == 0:
 		emit_signal("player_death")
 

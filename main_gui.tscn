@@ -1,8 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpmqq56dyjdg3"]
+[gd_scene load_steps=3 format=3 uid="uid://cpmqq56dyjdg3"]
 
-[ext_resource type="Texture2D" uid="uid://ch7pqsqgmg2ds" path="res://graphics/ui/bars/health_under.png" id="1_sdbsc"]
-[ext_resource type="Texture2D" uid="uid://br2x15h0gawkw" path="res://graphics/ui/bars/health_over.png" id="2_cthlb"]
-[ext_resource type="Texture2D" uid="uid://c0h3jom523xg3" path="res://graphics/ui/bars/health_progress.png" id="3_cj0o5"]
+[ext_resource type="PackedScene" uid="uid://5x8xw48tbe2d" path="res://better_progress.tscn" id="1_5p44q"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1x51o"]
 
@@ -26,18 +24,9 @@ theme_override_font_sizes/font_size = 36
 text = "Goblin
 "
 
-[node name="foe-health-bar" type="TextureProgressBar" parent="upper"]
+[node name="foe-health-bar" parent="upper" instance=ExtResource("1_5p44q")]
 layout_mode = 2
-value = 100.0
-nine_patch_stretch = true
-stretch_margin_left = 64
-stretch_margin_top = 20
-stretch_margin_right = 64
-stretch_margin_bottom = 20
-texture_under = ExtResource("1_sdbsc")
-texture_over = ExtResource("2_cthlb")
-texture_progress = ExtResource("3_cj0o5")
-tint_progress = Color(0.439216, 0.231373, 0.545098, 1)
+tint_progress = Color(1, 0.286275, 1, 1)
 
 [node name="spellname" type="Label" parent="."]
 layout_mode = 2
@@ -58,19 +47,9 @@ size_flags_horizontal = 4
 text = "Mana
 "
 
-[node name="player-mana-bar" type="TextureProgressBar" parent="HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(300, 0)
+[node name="player-mana-bar" parent="HBoxContainer/VBoxContainer" instance=ExtResource("1_5p44q")]
 layout_mode = 2
-value = 100.0
-nine_patch_stretch = true
-stretch_margin_left = 64
-stretch_margin_top = 20
-stretch_margin_right = 64
-stretch_margin_bottom = 20
-texture_under = ExtResource("1_sdbsc")
-texture_over = ExtResource("2_cthlb")
-texture_progress = ExtResource("3_cj0o5")
-tint_progress = Color(0.0980392, 0.639216, 0.537255, 1)
+tint_progress = Color(0.176471, 0.560784, 0.733333, 1)
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
@@ -80,16 +59,6 @@ layout_mode = 2
 text = "Health"
 horizontal_alignment = 1
 
-[node name="player-health-bar" type="TextureProgressBar" parent="HBoxContainer/VBoxContainer2"]
-custom_minimum_size = Vector2(300, 0)
+[node name="player-health-bar" parent="HBoxContainer/VBoxContainer2" instance=ExtResource("1_5p44q")]
 layout_mode = 2
-value = 100.0
-nine_patch_stretch = true
-stretch_margin_left = 64
-stretch_margin_top = 20
-stretch_margin_right = 64
-stretch_margin_bottom = 20
-texture_under = ExtResource("1_sdbsc")
-texture_over = ExtResource("2_cthlb")
-texture_progress = ExtResource("3_cj0o5")
-tint_progress = Color(0.568627, 0, 0.121569, 1)
+tint_progress = Color(0.94902, 0, 0.117647, 1)

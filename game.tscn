@@ -15,11 +15,6 @@ script = ExtResource("1_ykd1p")
 
 [node name="ui" parent="ui_canvas" instance=ExtResource("1_ujiw4")]
 
-[node name="regen" type="Timer" parent="."]
-wait_time = 0.1
-autostart = true
-
 [connection signal="player_death" from="." to="." method="_on_player_death"]
 [connection signal="cast_spell" from="game_canvas/SpellTable" to="." method="_on_cast_spell"]
 [connection signal="wrong_spell" from="game_canvas/SpellTable" to="." method="_on_wrong_spell"]
-[connection signal="timeout" from="regen" to="." method="_on_regen_timeout"]
