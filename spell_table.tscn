@@ -22,42 +22,42 @@
 [node name="SpellTable" type="Node2D"]
 script = ExtResource("1_r5jka")
 
-[node name="runes" type="Node2D" parent="."]
+[node name="runes_circle" type="Node2D" parent="."]
 
-[node name="aries" parent="runes" instance=ExtResource("11_nali1")]
+[node name="aries" parent="runes_circle" instance=ExtResource("11_nali1")]
 position = Vector2(743, 600)
 
-[node name="taurus" parent="runes" instance=ExtResource("10_4f02x")]
+[node name="taurus" parent="runes_circle" instance=ExtResource("10_4f02x")]
 position = Vector2(189, 443)
 
-[node name="gemini" parent="runes" instance=ExtResource("3_2gbx7")]
+[node name="gemini" parent="runes_circle" instance=ExtResource("3_2gbx7")]
 position = Vector2(465, 117)
 
-[node name="cancer" parent="runes" instance=ExtResource("5_njxge")]
+[node name="cancer" parent="runes_circle" instance=ExtResource("5_njxge")]
 position = Vector2(207, 293)
 
-[node name="leo" parent="runes" instance=ExtResource("13_7vata")]
+[node name="leo" parent="runes_circle" instance=ExtResource("13_7vata")]
 position = Vector2(191, 603)
 
-[node name="virgo" parent="runes" instance=ExtResource("2_rbulf")]
+[node name="virgo" parent="runes_circle" instance=ExtResource("2_rbulf")]
 position = Vector2(738, 455)
 
-[node name="libra" parent="runes" instance=ExtResource("4_cq05o")]
+[node name="libra" parent="runes_circle" instance=ExtResource("4_cq05o")]
 position = Vector2(729, 126)
 
-[node name="scorpio" parent="runes" instance=ExtResource("6_t40li")]
+[node name="scorpio" parent="runes_circle" instance=ExtResource("6_t40li")]
 position = Vector2(725, 288)
 
-[node name="sagittarius" parent="runes" instance=ExtResource("12_sikab")]
+[node name="sagittarius" parent="runes_circle" instance=ExtResource("12_sikab")]
 position = Vector2(492, 618)
 
-[node name="capricorn" parent="runes" instance=ExtResource("3_3p5ct")]
+[node name="capricorn" parent="runes_circle" instance=ExtResource("3_3p5ct")]
 position = Vector2(473, 453)
 
-[node name="aquarius" parent="runes" instance=ExtResource("3_ljaqv")]
+[node name="aquarius" parent="runes_circle" instance=ExtResource("3_ljaqv")]
 position = Vector2(207, 120)
 
-[node name="pisces" parent="runes" instance=ExtResource("7_32x8b")]
+[node name="pisces" parent="runes_circle" instance=ExtResource("7_32x8b")]
 position = Vector2(465, 296)
 
 [node name="sequence_begin" type="AudioStreamPlayer" parent="."]
@@ -85,4 +85,15 @@ autoplay = true
 [connection signal="cast_spell" from="." to="." method="_on_cast_spell"]
 [connection signal="continue_spell" from="." to="." method="_on_continue_spell"]
 [connection signal="wrong_spell" from="." to="." method="_on_wrong_spell"]
-[connection signal="rune_selected" from="runes/aquarius" to="." method="_on_rune_selected"]
+[connection signal="rune_selected" from="runes_circle/aries" to="." method="_on_rune_selected"]
+[connection signal="rune_selected" from="runes_circle/taurus" to="." method="_on_rune_selected"]
+[connection signal="rune_selected" from="runes_circle/gemini" to="." method="_on_rune_selected"]
+[connection signal="rune_selected" from="runes_circle/cancer" to="." method="_on_rune_selected"]
+[connection signal="rune_selected" from="runes_circle/leo" to="." method="_on_rune_selected"]
+[connection signal="rune_selected" from="runes_circle/virgo" to="." method="_on_rune_selected"]
+[connection signal="rune_selected" from="runes_circle/libra" to="." method="_on_rune_selected"]
+[connection signal="rune_selected" from="runes_circle/scorpio" to="." method="_on_rune_selected"]
+[connection signal="rune_selected" from="runes_circle/sagittarius" to="." method="_on_rune_selected"]
+[connection signal="rune_selected" from="runes_circle/capricorn" to="." method="_on_rune_selected"]
+[connection signal="rune_selected" from="runes_circle/aquarius" to="." method="_on_rune_selected"]
+[connection signal="rune_selected" from="runes_circle/pisces" to="." method="_on_rune_selected"]

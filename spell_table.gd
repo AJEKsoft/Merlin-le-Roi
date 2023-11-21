@@ -25,17 +25,21 @@ signal wrong_spell
 func _ready():
 	place_runes()
 
+func _update(delta : float):
+	$runes_circle.rotate(delta * deg_to_rad(10))
+
 # Place the runes evenly spaced around a circle
 func place_runes():
-	var total_runes = $runes.get_child_count()
+	var total_runes = $runes_circle.get_child_count()
 	var angle_increment = 2*PI / total_runes
 	var radius = 200.0
 
+	$runes_circle.position = get_viewport_rect().size/2
 	for i in range(total_runes):
-		var rune = $runes.get_child(i)
+		var rune = $runes_circle.get_child(i)
 		var x = radius * cos(angle_increment * i)
 		var y = radius * sin(angle_increment * i)
-		rune.position = Vector2(x, y) + get_viewport_rect().size/2
+		rune.position = Vector2(x, y) 
 
 func check_sequence():
 	var current_spell = spells
@@ -57,7 +61,7 @@ func check_sequence():
 
 func reset_sequence():
 	current_sequence = []
-	for rune in $runes.get_children():
+	for rune in $runes_circle.get_children():
 		rune.unselect()
 
 func _on_rune_selected(rune:String):
