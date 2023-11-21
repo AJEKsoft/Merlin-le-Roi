@@ -10,16 +10,21 @@ func _ready():
 	var player_health_bar = find_child("player-health-bar")
 	player_health_bar.set_max_value(PlayerState.health_max)
 	player_health_bar.new_value(PlayerState.health)
+	PlayerState.health = PlayerState.health_max
 	
 	var player_mana_bar = find_child("player-mana-bar")
 	player_mana_bar.set_max_value(PlayerState.mana_max)
 	player_mana_bar.new_value(PlayerState.mana)
+	PlayerState.mana = PlayerState.mana_max
 	
 	$game_canvas/SpellTable.radius = get_viewport_rect().size.y / 3
 	$game_canvas/SpellTable.place_runes()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	PlayerState.mana += PlayerState.mana_regen * delta
+	PlayerState.mana = min(PlayerState.mana, PlayerState.mana_max)
+	find_child("player-mana-bar").new_value(PlayerState.mana)
 	pass
 	
 func spawn_foe():
