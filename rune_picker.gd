@@ -16,10 +16,10 @@ var spells = {
 	}
 }
 
-signal begin_spell()
-signal continue_spell()
+signal begin_spell
+signal continue_spell
 signal cast_spell(spell:String)
-signal wrong_spell()
+signal wrong_spell
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
