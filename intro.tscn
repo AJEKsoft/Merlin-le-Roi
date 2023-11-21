@@ -1,0 +1,75 @@
+[gd_scene load_steps=7 format=3 uid="uid://crqkhv7odyp2y"]
+
+[ext_resource type="Texture2D" uid="uid://cepera3up8xlp" path="res://graphics/runes/aries.svg" id="1_a633c"]
+[ext_resource type="Script" path="res://intro.gd" id="1_lcxaf"]
+[ext_resource type="Texture2D" uid="uid://4y51lqv7f4mm" path="res://graphics/runes/virgo.svg" id="1_m1lf8"]
+[ext_resource type="Texture2D" uid="uid://8pxotjncu3e3" path="res://graphics/runes/pisces.svg" id="2_6n5ou"]
+[ext_resource type="Texture2D" uid="uid://bfpmq6i222x6e" path="res://graphics/runes/leo.svg" id="2_oppnv"]
+[ext_resource type="Texture2D" uid="uid://c01l5tilwp7u6" path="res://graphics/runes/saggitarius.svg" id="3_qidbc"]
+
+[node name="Intro" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lcxaf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+text = "Young apprentice, you have decided to enter king Merlin's dungeon to steal his Stone of Essence. Confident in your knowledge of runes, you believe you can defeat your foes, and even king Merlin himself. But I warn you, it is not an easy way in... Here are your spells:"
+fit_content = true
+
+[node name="heal" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Label" type="Label" parent="VBoxContainer/heal"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 36
+text = "Heal"
+
+[node name="aries" type="TextureRect" parent="VBoxContainer/heal"]
+layout_mode = 2
+texture = ExtResource("1_m1lf8")
+
+[node name="leo" type="TextureRect" parent="VBoxContainer/heal"]
+layout_mode = 2
+texture = ExtResource("2_6n5ou")
+
+[node name="fireball" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Label" type="Label" parent="VBoxContainer/fireball"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Fireball"
+
+[node name="aries" type="TextureRect" parent="VBoxContainer/fireball"]
+layout_mode = 2
+texture = ExtResource("1_a633c")
+
+[node name="leo" type="TextureRect" parent="VBoxContainer/fireball"]
+layout_mode = 2
+texture = ExtResource("2_oppnv")
+
+[node name="sagittarius" type="TextureRect" parent="VBoxContainer/fireball"]
+layout_mode = 2
+texture = ExtResource("3_qidbc")
+
+[node name="ContinueButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Enter the dungeon"
+
+[connection signal="pressed" from="VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
