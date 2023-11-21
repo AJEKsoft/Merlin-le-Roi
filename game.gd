@@ -18,7 +18,7 @@ func _process(delta):
 
 func spawn_foe():
 	# To change the kind of monster we spawn, we change the scene that's loaded.
-	var monster_scene = load("res://monsters/goblin.tscn")
+	var monster_scene = load("res://monsters/amethyst deceiver.tscn")
 	var monster = monster_scene.instantiate()
 	monster.health_progress = find_child("foe-health-bar")
 	add_child(monster)

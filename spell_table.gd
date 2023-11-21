@@ -22,6 +22,7 @@ signal cast_spell(spell:String)
 signal wrong_spell
 
 @export var rotation_speed : float = 1 # rotations per minute
+@export var radius = 200.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -33,11 +34,17 @@ func _process(delta : float):
 	for rune in $runes_circle.get_children():
 		rune.rotate(-delta * angular_speed)
 
+func _draw():
+	# draw a circle behind the runes
+	draw_circle($runes_circle.position, radius, Color(1,1,1,0.5))
+	for rune in $runes_circle.get_children():
+		# draw a line from the center of the circle to the rune
+		draw_line($runes_circle.position, rune.global_transform.get_origin(), Color(1,1,1,0.5), 2)
+
 # Place the runes evenly spaced around a circle
 func place_runes():
 	var total_runes = $runes_circle.get_child_count()
 	var angle_increment = 2*PI / total_runes
-	var radius = 200.0
 
 	$runes_circle.position = get_viewport_rect().size/2
 	for i in range(total_runes):
