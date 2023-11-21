@@ -1,20 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://ut5g6i5eisoy"]
+[gd_scene load_steps=4 format=3 uid="uid://ut5g6i5eisoy"]
 
 [ext_resource type="PackedScene" uid="uid://cpmqq56dyjdg3" path="res://main_gui.tscn" id="1_ujiw4"]
 [ext_resource type="Script" path="res://game.gd" id="1_ykd1p"]
-[ext_resource type="PackedScene" uid="uid://7khisw5vfwea" path="res://rune_picker.tscn" id="2_dn6q4"]
-[ext_resource type="AudioStream" uid="uid://cwhdkaa407esw" path="res://sound/effects/sequence_begin.wav" id="4_le3hw"]
-[ext_resource type="AudioStream" uid="uid://dambf8qvljm23" path="res://sound/effects/sequence_continue.wav" id="5_0yvgx"]
-[ext_resource type="AudioStream" uid="uid://dx0vymlqk263h" path="res://sound/effects/sequence_fail.wav" id="6_10al3"]
-[ext_resource type="AudioStream" uid="uid://15hx4itr7sxk" path="res://sound/effects/sequence_success.wav" id="7_tjfm5"]
-[ext_resource type="AudioStream" uid="uid://rdefsj3n4bvb" path="res://sound/music/dungeon_low.wav" id="8_1otx8"]
+[ext_resource type="PackedScene" uid="uid://ib7s2txjkplv" path="res://spell_table.tscn" id="2_pqwk0"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_ykd1p")
 
 [node name="game_canvas" type="CanvasLayer" parent="."]
 
-[node name="RunePicker" parent="game_canvas" instance=ExtResource("2_dn6q4")]
+[node name="SpellTable" parent="game_canvas" instance=ExtResource("2_pqwk0")]
 
 [node name="ui_canvas" type="CanvasLayer" parent="."]
 
@@ -24,30 +19,7 @@ script = ExtResource("1_ykd1p")
 wait_time = 0.1
 autostart = true
 
-[node name="sequence_begin" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_le3hw")
-volume_db = -8.0
-
-[node name="sequence_continue" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_0yvgx")
-volume_db = -8.0
-
-[node name="sequence_fail" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_10al3")
-volume_db = -8.0
-
-[node name="sequence_success" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_tjfm5")
-volume_db = -8.0
-
-[node name="dungeon_music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_1otx8")
-volume_db = -16.0
-autoplay = true
-
 [connection signal="player_death" from="." to="." method="_on_player_death"]
-[connection signal="begin_spell" from="game_canvas/RunePicker" to="." method="_on_begin_spell"]
-[connection signal="cast_spell" from="game_canvas/RunePicker" to="." method="_on_cast_spell"]
-[connection signal="continue_spell" from="game_canvas/RunePicker" to="." method="_on_continue_spell"]
-[connection signal="wrong_spell" from="game_canvas/RunePicker" to="." method="_on_wrong_spell"]
+[connection signal="cast_spell" from="game_canvas/SpellTable" to="." method="_on_cast_spell"]
+[connection signal="wrong_spell" from="game_canvas/SpellTable" to="." method="_on_wrong_spell"]
 [connection signal="timeout" from="regen" to="." method="_on_regen_timeout"]

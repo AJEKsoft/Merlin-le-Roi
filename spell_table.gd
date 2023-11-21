@@ -1,5 +1,5 @@
 extends Node2D
-class_name Rune
+class_name SpellTable
 
 var current_sequence = []
 var spells = {
@@ -27,12 +27,12 @@ func _ready():
 
 # Place the runes evenly spaced around a circle
 func place_runes():
-	var total_runes = get_child_count()
+	var total_runes = $runes.get_child_count()
 	var angle_increment = 2*PI / total_runes
 	var radius = 200.0
 
 	for i in range(total_runes):
-		var rune = get_child(i)
+		var rune = $runes.get_child(i)
 		var x = radius * cos(angle_increment * i)
 		var y = radius * sin(angle_increment * i)
 		rune.position = Vector2(x, y) + get_viewport_rect().size/2
@@ -57,7 +57,7 @@ func check_sequence():
 
 func reset_sequence():
 	current_sequence = []
-	for rune in get_children():
+	for rune in $runes.get_children():
 		rune.unselect()
 
 func _on_rune_selected(rune:String):
@@ -67,3 +67,15 @@ func _on_rune_selected(rune:String):
 		emit_signal("continue_spell")
 	current_sequence.append(rune)
 	check_sequence()
+
+func _on_wrong_spell():
+	$sequence_fail.play()
+
+func _on_continue_spell():
+	$sequence_continue.play()
+
+func _on_cast_spell(_spell: String):
+	$sequence_success.play()
+
+func _on_begin_spell():
+	$sequence_begin.play()	

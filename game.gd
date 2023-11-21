@@ -26,14 +26,7 @@ func spawn_foe():
 	monster.attack.connect(_on_foe_attack)
 	player_attack.connect(monster._on_attacked)
 
-func _on_begin_spell():
-	$sequence_begin.play()
-	
-func _on_continue_spell():
-	$sequence_continue.play()
-
 func _on_cast_spell(spell:String):
-	$sequence_success.play()
 	$ui_canvas/ui/spellname.text = spell
 	find_child("player-mana-bar").value -= 10
 	if spell == "fireball":
@@ -42,7 +35,6 @@ func _on_cast_spell(spell:String):
 		spell_heal()
 
 func _on_wrong_spell():
-	$sequence_fail.play()
 	find_child("spellname").text = "WRONG SPELL"
 
 func spell_fireball():
