@@ -8,11 +8,11 @@ func _ready():
 	spawn_foe()
 	# Set up the values of the bars.
 	var player_health_bar = find_child("player-health-bar")
-	player_health_bar.max_value = PlayerState.max_health
+	player_health_bar.max_value = PlayerState.health_max
 	player_health_bar.value = PlayerState.health
 	
 	var player_mana_bar = find_child("player-mana-bar")
-	player_mana_bar.max_value = PlayerState.max_mana
+	player_mana_bar.max_value = PlayerState.mana_max
 	player_mana_bar.value = PlayerState.mana
 	
 	$game_canvas/SpellTable.radius = get_viewport_rect().size.y / 3
@@ -20,10 +20,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var player_mana_bar = find_child("player-mana-bar")
-	if player_mana_bar.value < player_mana_bar.max_value:
-		player_mana_bar.value = min(player_mana_bar.value + PlayerState.mana_regen * delta, player_mana_bar.max_value)
+	pass
 
+func update_bars():
+	find_child("player-health-bar").value = PlayerState.health
+	find_child("player-mana-bar").value = PlayerState.mana
+	
 func spawn_foe():
 	# To change the kind of monster we spawn, we change the scene that's loaded.
 	var possible_monsters = LevelState.per_level_enemies[LevelState.current_level]
@@ -39,7 +41,8 @@ func spawn_foe():
 
 func _on_cast_spell(spell:String):
 	$ui_canvas/ui/spellname.text = spell
-	find_child("player-mana-bar").value -= 10
+	PlayerState.mana = max(PlayerState.mana - 10, 0)
+	update_bars()
 	if spell == "fireball":
 		spell_fireball()
 	elif spell == "heal":
@@ -52,17 +55,17 @@ func spell_fireball():
 	emit_signal("player_attack", 10)
 
 func spell_heal():
-	var player_health_bar = find_child("player-health-bar")
-	player_health_bar.value = min(player_health_bar.value + 5, player_health_bar.max_value)
+	PlayerState.health = min(PlayerState.health + 5, PlayerState.health_max)
+	update_bars()
 
 func _on_regen_timeout():
-	var player_mana_bar = find_child("player-mana-bar")
-	player_mana_bar.value = min(player_mana_bar.value + PlayerState.mana_regen, player_mana_bar.max_value)
+	PlayerState.mana = min(PlayerState.mana + PlayerState.mana_regen, PlayerState.mana_max)
+	update_bars()
 
 func _on_foe_attack(damage: int):
-	var player_health_bar = find_child("player-health-bar")
-	player_health_bar.value = max(player_health_bar.value - damage, 0)
-	if player_health_bar.value == 0:
+	PlayerState.health = max(PlayerState.health - damage, 0)
+	update_bars()
+	if PlayerState.health == 0:
 		emit_signal("player_death")
 
 func _on_foe_death():
