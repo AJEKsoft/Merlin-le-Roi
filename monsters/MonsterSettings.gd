@@ -11,6 +11,6 @@ class_name MonsterSettings
 @export var intelligence = 0
 @export var magic = 0
 @export var attack_speed = 0
-@export var death_sound : AudioStreamPlayer
-@export var hurt_sound : AudioStreamPlayer
-@export var attack_sound : AudioStreamPlayer
+@export var attack_sound : AudioStream
+@export var hurt_sound : AudioStream
+@export var death_sound : AudioStream
