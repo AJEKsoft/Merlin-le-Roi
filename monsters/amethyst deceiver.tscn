@@ -6,7 +6,7 @@
 
 [sub_resource type="Resource" id="Resource_6wl33"]
 script = ExtResource("2_2dgjc")
-health_regen_rate = 5
+health_regen_rate = 2
 max_health = 30
 max_mana = 20
 mana_regen_rate = 3
@@ -20,6 +20,6 @@ attack_speed = 3
 attributes = SubResource("Resource_6wl33")
 
 [node name="image" parent="." index="1"]
-modulate = Color(0.501961, 0.286275, 0.54902, 1)
+modulate = Color(0.768627, 0.556863, 0.811765, 1)
 scale = Vector2(1.00323, 1)
 texture = ExtResource("2_y6p7y")
