@@ -42,7 +42,7 @@ func spell_fireball():
 
 func spell_heal():
 	var player_health_bar = find_child("player-health-bar")
-	player_health_bar.value = min(player_health_bar.value + 10, player_health_bar.max_value)
+	player_health_bar.value = min(player_health_bar.value + 20, player_health_bar.max_value)
 
 func _on_regen_timeout():
 	var player_mana_bar = find_child("player-mana-bar")
