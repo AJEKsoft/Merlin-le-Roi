@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://csw74ajeq0e6a"]
+
+[ext_resource type="PackedScene" uid="uid://c3jpc0fh5gckl" path="res://runes/rune.tscn" id="1_ndv6u"]
+[ext_resource type="Texture2D" uid="uid://cpwpkh01jvdxk" path="res://graphics/runes/gemini.svg" id="2_6dtup"]
+
+[node name="gemini" instance=ExtResource("1_ndv6u")]
+
+[node name="selection" parent="." index="2"]
+modulate = Color(0.5, 0.5, 1, 1)
+
+[node name="image" parent="." index="3"]
+modulate = Color(0.5, 0.5, 1, 1)
+texture = ExtResource("2_6dtup")

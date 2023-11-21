@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbjhovo6j2afs"]
+
+[ext_resource type="PackedScene" uid="uid://c3jpc0fh5gckl" path="res://runes/rune.tscn" id="1_xtp1k"]
+[ext_resource type="Texture2D" uid="uid://b5he3ceot4tlk" path="res://graphics/runes/libra.svg" id="2_y50u0"]
+
+[node name="libra" instance=ExtResource("1_xtp1k")]
+
+[node name="selection" parent="." index="2"]
+modulate = Color(0.5, 0.5, 1, 1)
+
+[node name="image" parent="." index="3"]
+modulate = Color(0.5, 0.5, 1, 1)
+texture = ExtResource("2_y50u0")

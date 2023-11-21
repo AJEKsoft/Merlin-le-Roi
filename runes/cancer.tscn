@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://1hmqomuriq5w"]
+
+[ext_resource type="PackedScene" uid="uid://c3jpc0fh5gckl" path="res://runes/rune.tscn" id="1_h7h8u"]
+[ext_resource type="Texture2D" uid="uid://cgtps4f3w5x1r" path="res://graphics/runes/cancer.svg" id="2_dlkfu"]
+
+[node name="cancer" instance=ExtResource("1_h7h8u")]
+
+[node name="image" parent="." index="3"]
+modulate = Color(0.25, 0.25, 1, 1)
+texture = ExtResource("2_dlkfu")

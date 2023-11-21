@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cc10e2a4800gu"]
+
+[ext_resource type="PackedScene" uid="uid://c3jpc0fh5gckl" path="res://runes/rune.tscn" id="1_atxwy"]
+[ext_resource type="Texture2D" uid="uid://cepera3up8xlp" path="res://graphics/runes/aries.svg" id="2_3hk8j"]
+
+[node name="aries" instance=ExtResource("1_atxwy")]
+
+[node name="image" parent="." index="3"]
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("2_3hk8j")

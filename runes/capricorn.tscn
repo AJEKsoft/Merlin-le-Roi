@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cr01samdgw0qi"]
+
+[ext_resource type="PackedScene" uid="uid://c3jpc0fh5gckl" path="res://runes/rune.tscn" id="1_yc6im"]
+[ext_resource type="Texture2D" uid="uid://cra7b3jye0sh4" path="res://graphics/runes/capricorn.svg" id="2_ml4wt"]
+
+[node name="capricorn" instance=ExtResource("1_yc6im")]
+
+[node name="image" parent="." index="3"]
+modulate = Color(1, 0.5, 0, 1)
+texture = ExtResource("2_ml4wt")

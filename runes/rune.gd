@@ -6,20 +6,8 @@ signal rune_selected(rune:String)
 func _ready():
 	$image.texture = load("res://graphics/runes/" + self.name + ".svg")
 	$image.scale = Vector2(0.5, 0.5)
-	
-	match self.name:
-		"aries", "leo", "saggitarius":
-			$image.modulate = Color (1, 0, 0)
-			$selection.modulate = Color (1, 0, 0)
-		"taurus", "virgo", "capricorn":
-			$image.modulate = Color (1, 0.5, 0)
-			$selection.modulate = Color (1, 0.5, 0)
-		"gemini", "libra", "aquarius":
-			$image.modulate = Color (0.5, 0.5, 1)
-			$selection.modulate = Color (0.5, 0.5, 1)
-		"cancer", "scorpio", "pisces":
-			$image.modulate = Color (0.25, 0.25, 1)
-			$selection.modulate = Color (0.25, 0.25, 1)
+
+	$selection.modulate = $image.modulate
 	
 	$selection.scale = Vector2(0.5, 0.5)
 	$backdrop.scale = Vector2(0.5, 0.5)

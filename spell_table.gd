@@ -11,7 +11,7 @@ var spells = {
 	},
 	"aries" : {
 		"leo" : {
-			"saggitarius" : "fireball"
+			"sagittarius" : "fireball"
 		}
 	}
 }

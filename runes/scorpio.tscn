@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2lkgdg6e4q0o"]
+
+[ext_resource type="PackedScene" uid="uid://c3jpc0fh5gckl" path="res://runes/rune.tscn" id="1_mnao7"]
+[ext_resource type="Texture2D" uid="uid://mt8ft6lnkwxj" path="res://graphics/runes/scorpio.svg" id="2_83xdm"]
+
+[node name="scorpio" instance=ExtResource("1_mnao7")]
+
+[node name="image" parent="." index="3"]
+modulate = Color(0.25, 0.25, 1, 1)
+texture = ExtResource("2_83xdm")

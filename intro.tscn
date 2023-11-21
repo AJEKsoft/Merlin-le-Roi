@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://4y51lqv7f4mm" path="res://graphics/runes/virgo.svg" id="1_m1lf8"]
 [ext_resource type="Texture2D" uid="uid://8pxotjncu3e3" path="res://graphics/runes/pisces.svg" id="2_6n5ou"]
 [ext_resource type="Texture2D" uid="uid://bfpmq6i222x6e" path="res://graphics/runes/leo.svg" id="2_oppnv"]
-[ext_resource type="Texture2D" uid="uid://c01l5tilwp7u6" path="res://graphics/runes/saggitarius.svg" id="3_qidbc"]
+[ext_resource type="Texture2D" uid="uid://c01l5tilwp7u6" path="res://graphics/runes/sagittarius.svg" id="6_cc2uh"]
 
 [node name="Intro" type="TextureRect"]
 anchors_preset = 15
@@ -65,7 +65,7 @@ texture = ExtResource("2_oppnv")
 
 [node name="sagittarius" type="TextureRect" parent="VBoxContainer/fireball"]
 layout_mode = 2
-texture = ExtResource("3_qidbc")
+texture = ExtResource("6_cc2uh")
 
 [node name="ContinueButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2

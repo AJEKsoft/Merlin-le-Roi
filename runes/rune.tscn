@@ -1,24 +1,25 @@
 [gd_scene load_steps=5 format=3 uid="uid://c3jpc0fh5gckl"]
 
-[ext_resource type="Script" path="res://rune.gd" id="1_4d0tp"]
-[ext_resource type="Texture2D" uid="uid://k2quk7vro88n" path="res://graphics/ui/rune_selected.svg" id="2_7qqxl"]
-[ext_resource type="Texture2D" uid="uid://65424w201jlb" path="res://graphics/ui/rune_background.svg" id="3_ru3fg"]
+[ext_resource type="Script" path="res://runes/rune.gd" id="1_mtek6"]
+[ext_resource type="Texture2D" uid="uid://65424w201jlb" path="res://graphics/ui/rune_background.svg" id="2_cvuty"]
+[ext_resource type="Texture2D" uid="uid://k2quk7vro88n" path="res://graphics/ui/rune_selected.svg" id="3_c1vci"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_am736"]
+radius = 67.0075
 
 [node name="Rune" type="Area2D"]
-script = ExtResource("1_4d0tp")
+script = ExtResource("1_mtek6")
 
 [node name="collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_am736")
 
 [node name="backdrop" type="Sprite2D" parent="."]
 modulate = Color(0.827451, 0.827451, 0.827451, 1)
-texture = ExtResource("3_ru3fg")
+texture = ExtResource("2_cvuty")
 
 [node name="selection" type="Sprite2D" parent="."]
 visible = false
-texture = ExtResource("2_7qqxl")
+texture = ExtResource("3_c1vci")
 
 [node name="image" type="Sprite2D" parent="."]
 

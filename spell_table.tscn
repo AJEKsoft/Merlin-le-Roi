@@ -1,53 +1,64 @@
-[gd_scene load_steps=8 format=3 uid="uid://ib7s2txjkplv"]
+[gd_scene load_steps=19 format=3 uid="uid://ib7s2txjkplv"]
 
-[ext_resource type="PackedScene" uid="uid://c3jpc0fh5gckl" path="res://rune.tscn" id="1_e4dat"]
 [ext_resource type="Script" path="res://spell_table.gd" id="1_r5jka"]
+[ext_resource type="PackedScene" uid="uid://bpok4w27towop" path="res://runes/virgo.tscn" id="2_rbulf"]
+[ext_resource type="PackedScene" uid="uid://csw74ajeq0e6a" path="res://runes/gemini.tscn" id="3_2gbx7"]
+[ext_resource type="PackedScene" uid="uid://cr01samdgw0qi" path="res://runes/capricorn.tscn" id="3_3p5ct"]
+[ext_resource type="PackedScene" uid="uid://n65rvjn03kfu" path="res://runes/aquarius.tscn" id="3_ljaqv"]
 [ext_resource type="AudioStream" uid="uid://cwhdkaa407esw" path="res://sound/effects/sequence_begin.wav" id="3_xpf7g"]
+[ext_resource type="PackedScene" uid="uid://dbjhovo6j2afs" path="res://runes/libra.tscn" id="4_cq05o"]
 [ext_resource type="AudioStream" uid="uid://dambf8qvljm23" path="res://sound/effects/sequence_continue.wav" id="4_tayny"]
 [ext_resource type="AudioStream" uid="uid://dx0vymlqk263h" path="res://sound/effects/sequence_fail.wav" id="5_17vis"]
+[ext_resource type="PackedScene" uid="uid://1hmqomuriq5w" path="res://runes/cancer.tscn" id="5_njxge"]
 [ext_resource type="AudioStream" uid="uid://15hx4itr7sxk" path="res://sound/effects/sequence_success.wav" id="6_hsj8s"]
+[ext_resource type="PackedScene" uid="uid://b2lkgdg6e4q0o" path="res://runes/scorpio.tscn" id="6_t40li"]
+[ext_resource type="PackedScene" uid="uid://cgs2613xayga" path="res://runes/pisces.tscn" id="7_32x8b"]
 [ext_resource type="AudioStream" uid="uid://rdefsj3n4bvb" path="res://sound/music/dungeon_low.wav" id="7_mvs8o"]
+[ext_resource type="PackedScene" uid="uid://dsmoiu2p1st0k" path="res://runes/taurus.tscn" id="10_4f02x"]
+[ext_resource type="PackedScene" uid="uid://cc10e2a4800gu" path="res://runes/aries.tscn" id="11_nali1"]
+[ext_resource type="PackedScene" uid="uid://bug2gunp0f64e" path="res://runes/sagittarius.tscn" id="12_sikab"]
+[ext_resource type="PackedScene" uid="uid://c6tlwu7o7wnwi" path="res://runes/leo.tscn" id="13_7vata"]
 
 [node name="SpellTable" type="Node2D"]
 script = ExtResource("1_r5jka")
 
 [node name="runes" type="Node2D" parent="."]
 
-[node name="aquarius" parent="runes" instance=ExtResource("1_e4dat")]
-position = Vector2(293, 242)
+[node name="aries" parent="runes" instance=ExtResource("11_nali1")]
+position = Vector2(743, 600)
 
-[node name="aries" parent="runes" instance=ExtResource("1_e4dat")]
-position = Vector2(382, 147)
+[node name="taurus" parent="runes" instance=ExtResource("10_4f02x")]
+position = Vector2(189, 443)
 
-[node name="cancer" parent="runes" instance=ExtResource("1_e4dat")]
-position = Vector2(548, 101)
+[node name="gemini" parent="runes" instance=ExtResource("3_2gbx7")]
+position = Vector2(465, 117)
 
-[node name="capricorn" parent="runes" instance=ExtResource("1_e4dat")]
-position = Vector2(707, 143)
+[node name="cancer" parent="runes" instance=ExtResource("5_njxge")]
+position = Vector2(207, 293)
 
-[node name="gemini" parent="runes" instance=ExtResource("1_e4dat")]
-position = Vector2(818, 206)
+[node name="leo" parent="runes" instance=ExtResource("13_7vata")]
+position = Vector2(191, 603)
 
-[node name="leo" parent="runes" instance=ExtResource("1_e4dat")]
-position = Vector2(870, 307)
+[node name="virgo" parent="runes" instance=ExtResource("2_rbulf")]
+position = Vector2(738, 455)
 
-[node name="libra" parent="runes" instance=ExtResource("1_e4dat")]
-position = Vector2(874, 416)
+[node name="libra" parent="runes" instance=ExtResource("4_cq05o")]
+position = Vector2(729, 126)
 
-[node name="pisces" parent="runes" instance=ExtResource("1_e4dat")]
-position = Vector2(795, 491)
+[node name="scorpio" parent="runes" instance=ExtResource("6_t40li")]
+position = Vector2(725, 288)
 
-[node name="saggitarius" parent="runes" instance=ExtResource("1_e4dat")]
-position = Vector2(693, 534)
+[node name="sagittarius" parent="runes" instance=ExtResource("12_sikab")]
+position = Vector2(492, 618)
 
-[node name="scorpio" parent="runes" instance=ExtResource("1_e4dat")]
-position = Vector2(565, 535)
+[node name="capricorn" parent="runes" instance=ExtResource("3_3p5ct")]
+position = Vector2(473, 453)
 
-[node name="taurus" parent="runes" instance=ExtResource("1_e4dat")]
-position = Vector2(374, 520)
+[node name="aquarius" parent="runes" instance=ExtResource("3_ljaqv")]
+position = Vector2(207, 120)
 
-[node name="virgo" parent="runes" instance=ExtResource("1_e4dat")]
-position = Vector2(251, 398)
+[node name="pisces" parent="runes" instance=ExtResource("7_32x8b")]
+position = Vector2(465, 296)
 
 [node name="sequence_begin" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_xpf7g")
@@ -75,14 +86,3 @@ autoplay = true
 [connection signal="continue_spell" from="." to="." method="_on_continue_spell"]
 [connection signal="wrong_spell" from="." to="." method="_on_wrong_spell"]
 [connection signal="rune_selected" from="runes/aquarius" to="." method="_on_rune_selected"]
-[connection signal="rune_selected" from="runes/aries" to="." method="_on_rune_selected"]
-[connection signal="rune_selected" from="runes/cancer" to="." method="_on_rune_selected"]
-[connection signal="rune_selected" from="runes/capricorn" to="." method="_on_rune_selected"]
-[connection signal="rune_selected" from="runes/gemini" to="." method="_on_rune_selected"]
-[connection signal="rune_selected" from="runes/leo" to="." method="_on_rune_selected"]
-[connection signal="rune_selected" from="runes/libra" to="." method="_on_rune_selected"]
-[connection signal="rune_selected" from="runes/pisces" to="." method="_on_rune_selected"]
-[connection signal="rune_selected" from="runes/saggitarius" to="." method="_on_rune_selected"]
-[connection signal="rune_selected" from="runes/scorpio" to="." method="_on_rune_selected"]
-[connection signal="rune_selected" from="runes/taurus" to="." method="_on_rune_selected"]
-[connection signal="rune_selected" from="runes/virgo" to="." method="_on_rune_selected"]

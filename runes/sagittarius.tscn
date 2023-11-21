@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bug2gunp0f64e"]
+
+[ext_resource type="PackedScene" uid="uid://c3jpc0fh5gckl" path="res://runes/rune.tscn" id="1_myvc1"]
+[ext_resource type="Texture2D" uid="uid://c01l5tilwp7u6" path="res://graphics/runes/sagittarius.svg" id="2_rtpe5"]
+
+[node name="sagittarius" instance=ExtResource("1_myvc1")]
+
+[node name="image" parent="." index="3"]
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("2_rtpe5")

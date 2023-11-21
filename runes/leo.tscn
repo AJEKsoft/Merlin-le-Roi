@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6tlwu7o7wnwi"]
+
+[ext_resource type="PackedScene" uid="uid://c3jpc0fh5gckl" path="res://runes/rune.tscn" id="1_xindh"]
+[ext_resource type="Texture2D" uid="uid://bfpmq6i222x6e" path="res://graphics/runes/leo.svg" id="2_6y3d3"]
+
+[node name="leo" instance=ExtResource("1_xindh")]
+
+[node name="image" parent="." index="3"]
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("2_6y3d3")

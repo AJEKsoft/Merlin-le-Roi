@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://n65rvjn03kfu"]
+
+[ext_resource type="PackedScene" uid="uid://c3jpc0fh5gckl" path="res://runes/rune.tscn" id="1_gbgl7"]
+[ext_resource type="Texture2D" uid="uid://c8dmafgwvvrm3" path="res://graphics/runes/aquarius.svg" id="2_i5kid"]
+
+[node name="aquarius" instance=ExtResource("1_gbgl7")]
+
+[node name="selection" parent="." index="2"]
+modulate = Color(0.5, 0.5, 1, 1)
+
+[node name="image" parent="." index="3"]
+modulate = Color(0.5, 0.5, 1, 1)
+texture = ExtResource("2_i5kid")
