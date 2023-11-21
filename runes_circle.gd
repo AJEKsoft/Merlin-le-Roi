@@ -13,7 +13,7 @@ func _draw():
 	var sequence = get_parent().current_sequence
 	# draw a line from each rune to the next, and to the mouse cursor
 	if sequence.size() > 0:
-		var firstRune = get_child(0)
+		var firstRune = find_child(sequence[0])
 		var color = firstRune.find_child("image").modulate
 		var thickness = 10 * sequence.size()
 		for i in range(sequence.size() - 1):
