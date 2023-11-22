@@ -18,6 +18,8 @@ var is_moving = false
 func _ready():
 	pass # Replace with function body.
 
+signal trigger_combat
+signal enter_tile
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -35,6 +37,7 @@ func _process(delta):
 		if moved >= 1: # we have over-moved
 			delta_move -= moved - 1
 			is_moving = false
+			emit_signal("enter_tile")
 		var forward = Vector3(0, 0, 1) * delta_move * move_direction
 		translate(forward)		
 
@@ -55,3 +58,7 @@ func _process(delta):
 			is_rotating = true
 			rotated = 0
 			rotate_direction = -1
+
+func _on_enter_tile():
+	if randi() % 10 == 0:
+		emit_signal("trigger_combat")

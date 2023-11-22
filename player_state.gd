@@ -8,6 +8,8 @@ var mana_regen = 3
 
 var available_runes = [ "aries", "capricorn", "cancer", "libra" ]
 
+var current_scene = null # This holds the current exploration scene, saved between battles
+
 #var available_spells = [
 #	SpellData.spells["flame"],
 #	SpellData.spells["bandaid"],

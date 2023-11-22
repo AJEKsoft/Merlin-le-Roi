@@ -12,5 +12,6 @@ func _process(delta):
 
 func _on_area_entered(area:Area3D):
 	if area is Player:
-		get_tree().change_scene_to_file("res://scenes/victory_screen.tscn")
+		LevelState.current_level += 1
+		get_tree().change_scene_to_file("res://scenes/end_level.tscn")
 	pass # Replace with function body.

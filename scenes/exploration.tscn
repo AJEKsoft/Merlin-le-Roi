@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://lbgk1m4m8x08"]
+
+[ext_resource type="Script" path="res://scenes/exploration.gd" id="1_anbd4"]
+[ext_resource type="PackedScene" uid="uid://cwh13saciofc" path="res://levels/player.tscn" id="2_8kyw0"]
+
+[node name="Exploration" type="Node3D"]
+script = ExtResource("1_anbd4")
+
+[node name="Player" parent="." instance=ExtResource("2_8kyw0")]
+
+[connection signal="trigger_combat" from="Player" to="." method="_on_trigger_combat"]

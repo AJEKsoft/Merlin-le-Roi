@@ -21,8 +21,6 @@ func _ready():
 	$game_canvas/SpellTable.radius = get_viewport_rect().size.y / 3
 	$game_canvas/SpellTable.place_runes()
 
-	level = load("res://levels/level"+str(LevelState.current_level)+".tscn").instantiate()
-	add_child(level)
 	spawn_foe()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -37,14 +35,13 @@ func spawn_foe():
 	var possible_monsters = LevelState.per_level_enemies[LevelState.current_level]
 	var monster_scene = load(possible_monsters[randi() % possible_monsters.size()])
 	var monster = monster_scene.instantiate()
-	var camera = level.find_child("Player")
 	monster.health_progress = find_child("foe-health-bar")
 	monster.death.connect(_on_foe_death)
 	monster.attack.connect(_on_foe_attack)
 	player_attack.connect(monster._on_attacked)
-	monster.position = camera.position + camera.global_transform.basis.z * -1
+	monster.position = get_viewport_rect().size / 2
 	find_child("foe-name").text = monster.name
-	level.add_child(monster)
+	add_child(monster)
 
 func _on_cast_spell(spell:String):
 	$ui_canvas/ui/spellname.text = spell
@@ -75,7 +72,7 @@ func _on_foe_attack(damage: int):
 		emit_signal("player_death")
 
 func _on_foe_death():
-	get_tree().change_scene_to_file("res://victory_screen.tscn")
+	get_tree().change_scene_to_file("res://scenes/victory_screen.tscn")
 
 func _on_player_death():
-	get_tree().change_scene_to_file("res://death_screen.tscn")
+	get_tree().change_scene_to_file("res://scenes/death_screen.tscn")

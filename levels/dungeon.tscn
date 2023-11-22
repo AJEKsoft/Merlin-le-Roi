@@ -1,10 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://dk82bao3hl5xt"]
+[gd_scene load_steps=13 format=3 uid="uid://dk82bao3hl5xt"]
 
 [ext_resource type="Script" path="res://levels/dungeon.gd" id="1_1pkgy"]
-[ext_resource type="Script" path="res://levels/PlayerCamera.gd" id="2_ditw6"]
 [ext_resource type="MeshLibrary" uid="uid://djey2ieu23xqy" path="res://graphics/3d/wall_library.tres" id="3_n1nch"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_aoayj"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ft6uj"]
 
@@ -64,15 +61,6 @@ fog_density = 0.5
 
 [node name="Dungeon" type="Node3D"]
 script = ExtResource("1_1pkgy")
-
-[node name="Player" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-script = ExtResource("2_ditw6")
-
-[node name="Camera" type="Camera3D" parent="Player"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
-shape = SubResource("BoxShape3D_aoayj")
 
 [node name="Walls" type="GridMap" parent="."]
 mesh_library = ExtResource("3_n1nch")

@@ -1,4 +1,5 @@
-extends TextureRect
+extends Control
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -9,8 +10,7 @@ func _ready():
 func _process(delta):
 	pass
 
-func _on_continue_button_pressed():
-	get_tree().get_current_scene().queue_free()
-	get_tree().get_root().add_child(PlayerState.current_scene)
-	get_tree().set_current_scene(PlayerState.current_scene)
+
+func _on_continue_pressed():
+	get_tree().change_scene_to_file("res://scenes/exploration.tscn")
 	pass # Replace with function body.
