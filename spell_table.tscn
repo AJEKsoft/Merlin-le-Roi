@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ib7s2txjkplv"]
+[gd_scene load_steps=21 format=3 uid="uid://ib7s2txjkplv"]
 
 [ext_resource type="Script" path="res://spell_table.gd" id="1_r5jka"]
 [ext_resource type="PackedScene" uid="uid://bpok4w27towop" path="res://runes/virgo.tscn" id="2_rbulf"]
@@ -14,7 +14,6 @@
 [ext_resource type="AudioStream" uid="uid://15hx4itr7sxk" path="res://sound/effects/sequence_success.wav" id="6_hsj8s"]
 [ext_resource type="PackedScene" uid="uid://b2lkgdg6e4q0o" path="res://runes/scorpio.tscn" id="6_t40li"]
 [ext_resource type="PackedScene" uid="uid://cgs2613xayga" path="res://runes/pisces.tscn" id="7_32x8b"]
-[ext_resource type="AudioStream" uid="uid://rdefsj3n4bvb" path="res://sound/music/dungeon_low.wav" id="7_mvs8o"]
 [ext_resource type="PackedScene" uid="uid://dsmoiu2p1st0k" path="res://runes/taurus.tscn" id="10_4f02x"]
 [ext_resource type="PackedScene" uid="uid://cc10e2a4800gu" path="res://runes/aries.tscn" id="11_nali1"]
 [ext_resource type="PackedScene" uid="uid://bug2gunp0f64e" path="res://runes/sagittarius.tscn" id="12_sikab"]
@@ -94,11 +93,6 @@ volume_db = -8.0
 [node name="sequence_success" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_hsj8s")
 volume_db = -8.0
-
-[node name="dungeon_music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_mvs8o")
-volume_db = -16.0
-autoplay = true
 
 [connection signal="begin_spell" from="." to="." method="_on_begin_spell"]
 [connection signal="cast_spell" from="." to="." method="_on_cast_spell"]
