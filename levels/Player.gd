@@ -16,7 +16,6 @@ var is_moving = false
 func _ready():
 	pass # Replace with function body.
 
-signal trigger_combat
 signal enter_tile
 signal action 
 signal request_move(target:Vector2i)
@@ -102,10 +101,6 @@ func _process(delta):
 			rotate_to(current_rotation - 90)
 		if Input.is_action_just_pressed("dungeon_action"):
 			action.emit()
-
-func _on_enter_tile():
-	if randi() % 10 == 0:
-		trigger_combat.emit()
 
 func get_forward_cell_position() -> Vector2i:
 	return grid_position + grid_lookat

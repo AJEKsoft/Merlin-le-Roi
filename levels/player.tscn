@@ -12,5 +12,3 @@ script = ExtResource("1_vhvmr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_aoayj")
-
-[connection signal="enter_tile" from="." to="." method="_on_enter_tile"]
