@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://dk82bao3hl5xt"]
+
+[ext_resource type="Script" path="res://DungeonCamera.gd" id="1_7weug"]
+[ext_resource type="Script" path="res://dungeon.gd" id="1_uydyw"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fyu1u"]
+size = Vector2(200, 200)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8vrjh"]
+albedo_color = Color(0.231373, 0.262745, 0.176471, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vmjcr"]
+size = Vector2(200, 200)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vr3vt"]
+albedo_color = Color(0.258824, 0.2, 0.14902, 1)
+
+[node name="Dungeon" type="Node3D"]
+script = ExtResource("1_uydyw")
+
+[node name="DungeonCamera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+script = ExtResource("1_7weug")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="DungeonCamera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0996794, 0)
+
+[node name="walls" type="Node3D" parent="."]
+
+[node name="floor" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_fyu1u")
+surface_material_override/0 = SubResource("StandardMaterial3D_8vrjh")
+
+[node name="ceiling" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0.5, 0)
+mesh = SubResource("PlaneMesh_vmjcr")
+surface_material_override/0 = SubResource("StandardMaterial3D_vr3vt")
