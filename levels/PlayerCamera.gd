@@ -1,4 +1,6 @@
-extends Camera3D
+extends Area3D 
+
+class_name Player
 
 # smooth rotation variables
 var rotated = 0 # in radians, how much we have rotated
@@ -36,19 +38,20 @@ func _process(delta):
 		var forward = Vector3(0, 0, 1) * delta_move * move_direction
 		translate(forward)		
 
-	if Input.is_action_just_pressed("dungeon_move_forward") and not is_moving:
-		is_moving = true
-		moved = 0
-		move_direction = -1	
-	if Input.is_action_just_pressed("dungeon_move_backward"):
-		is_moving = true
-		moved = 0
-		move_direction = 1
-	if Input.is_action_just_pressed("dungeon_turn_left") and not is_rotating:
-		is_rotating = true
-		rotated = 0
-		rotate_direction = 1
-	if Input.is_action_just_pressed("dungeon_turn_right") and not is_rotating:
-		is_rotating = true
-		rotated = 0
-		rotate_direction = -1
+	if not (is_moving or is_rotating):
+		if Input.is_action_just_pressed("dungeon_move_forward"):
+			is_moving = true
+			moved = 0
+			move_direction = -1	
+		if Input.is_action_just_pressed("dungeon_move_backward"):
+			is_moving = true
+			moved = 0
+			move_direction = 1
+		if Input.is_action_just_pressed("dungeon_turn_left"):
+			is_rotating = true
+			rotated = 0
+			rotate_direction = 1
+		if Input.is_action_just_pressed("dungeon_turn_right"):
+			is_rotating = true
+			rotated = 0
+			rotate_direction = -1

@@ -1,4 +1,4 @@
-extends TextureRect
+extends Area3D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -10,6 +10,7 @@ func _ready():
 func _process(delta):
 	pass
 
-
-func _on_continue_button_pressed():
-	get_tree().change_scene_to_file("res://game.tscn")
+func _on_area_entered(area:Area3D):
+	if area is Player:
+		get_tree().change_scene_to_file("res://scenes/victory_screen.tscn")
+	pass # Replace with function body.

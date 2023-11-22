@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://crqkhv7odyp2y"]
 
-[ext_resource type="Texture2D" uid="uid://cepera3up8xlp" path="res://graphics/runes/aries.svg" id="1_a633c"]
-[ext_resource type="Script" path="res://intro.gd" id="1_lcxaf"]
-[ext_resource type="Texture2D" uid="uid://4y51lqv7f4mm" path="res://graphics/runes/virgo.svg" id="1_m1lf8"]
-[ext_resource type="Texture2D" uid="uid://8pxotjncu3e3" path="res://graphics/runes/pisces.svg" id="2_6n5ou"]
-[ext_resource type="Texture2D" uid="uid://bfpmq6i222x6e" path="res://graphics/runes/leo.svg" id="2_oppnv"]
-[ext_resource type="Texture2D" uid="uid://c01l5tilwp7u6" path="res://graphics/runes/sagittarius.svg" id="6_cc2uh"]
+[ext_resource type="Script" path="res://scenes/intro.gd" id="1_m3scc"]
+[ext_resource type="Texture2D" uid="uid://4y51lqv7f4mm" path="res://graphics/runes/virgo.svg" id="2_mwxro"]
+[ext_resource type="Texture2D" uid="uid://8pxotjncu3e3" path="res://graphics/runes/pisces.svg" id="3_eaass"]
+[ext_resource type="Texture2D" uid="uid://cepera3up8xlp" path="res://graphics/runes/aries.svg" id="4_f01ac"]
+[ext_resource type="Texture2D" uid="uid://bfpmq6i222x6e" path="res://graphics/runes/leo.svg" id="5_njrb7"]
+[ext_resource type="Texture2D" uid="uid://c01l5tilwp7u6" path="res://graphics/runes/sagittarius.svg" id="6_sr0vq"]
 
 [node name="Intro" type="TextureRect"]
 anchors_preset = 15
@@ -13,7 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_lcxaf")
+script = ExtResource("1_m3scc")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -40,11 +40,11 @@ text = "Heal"
 
 [node name="aries" type="TextureRect" parent="VBoxContainer/heal"]
 layout_mode = 2
-texture = ExtResource("1_m1lf8")
+texture = ExtResource("2_mwxro")
 
 [node name="leo" type="TextureRect" parent="VBoxContainer/heal"]
 layout_mode = 2
-texture = ExtResource("2_6n5ou")
+texture = ExtResource("3_eaass")
 
 [node name="fireball" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -57,15 +57,15 @@ text = "Fireball"
 
 [node name="aries" type="TextureRect" parent="VBoxContainer/fireball"]
 layout_mode = 2
-texture = ExtResource("1_a633c")
+texture = ExtResource("4_f01ac")
 
 [node name="leo" type="TextureRect" parent="VBoxContainer/fireball"]
 layout_mode = 2
-texture = ExtResource("2_oppnv")
+texture = ExtResource("5_njrb7")
 
 [node name="sagittarius" type="TextureRect" parent="VBoxContainer/fireball"]
 layout_mode = 2
-texture = ExtResource("6_cc2uh")
+texture = ExtResource("6_sr0vq")
 
 [node name="ContinueButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2

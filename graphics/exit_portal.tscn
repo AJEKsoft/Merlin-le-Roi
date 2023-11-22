@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://coabd7b5801ae"]
+
+[ext_resource type="Script" path="res://graphics/exit_portal.gd" id="1_vcece"]
+[ext_resource type="Material" uid="uid://do33c0cju8c07" path="res://graphics/materials/portal0.tres" id="1_yf88q"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ai1do"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_v048r"]
+material = ExtResource("1_yf88q")
+
+[node name="ExitPortal" type="Area3D"]
+script = ExtResource("1_vcece")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_ai1do")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_v048r")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

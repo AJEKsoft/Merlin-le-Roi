@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bq5r261y84ada"]
+
+[ext_resource type="Material" uid="uid://cv5ol82lvq2sm" path="res://graphics/materials/brick0.tres" id="1_hs05q"]
+[ext_resource type="Material" uid="uid://d0hyibbhfkcfm" path="res://graphics/materials/broken_brick0.tres" id="2_gv3w5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_4ivvk"]
+lightmap_size_hint = Vector2i(14, 21)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lavx7"]
+
+[node name="Wall" type="MeshInstance3D"]
+
+[node name="Brick" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_4ivvk")
+surface_material_override/0 = ExtResource("1_hs05q")
+
+[node name="Area3D" type="Area3D" parent="Brick"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Brick/Area3D"]
+shape = SubResource("BoxShape3D_lavx7")
+
+[node name="BrokenBrick" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+mesh = SubResource("BoxMesh_4ivvk")
+surface_material_override/0 = ExtResource("2_gv3w5")
+
+[node name="Area3D" type="Area3D" parent="BrokenBrick"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BrokenBrick/Area3D"]
+shape = SubResource("BoxShape3D_lavx7")

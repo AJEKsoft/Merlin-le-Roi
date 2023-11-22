@@ -1,0 +1,92 @@
+[gd_scene load_steps=15 format=3 uid="uid://dk82bao3hl5xt"]
+
+[ext_resource type="Script" path="res://levels/dungeon.gd" id="1_1pkgy"]
+[ext_resource type="Script" path="res://levels/PlayerCamera.gd" id="2_ditw6"]
+[ext_resource type="MeshLibrary" uid="uid://djey2ieu23xqy" path="res://graphics/3d/wall_library.tres" id="3_n1nch"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aoayj"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ft6uj"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_4n3hv"]
+width = 64
+height = 64
+seamless = true
+seamless_blend_skirt = 0.3
+noise = SubResource("FastNoiseLite_ft6uj")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5drkp"]
+albedo_color = Color(0.192157, 0.211765, 0.14902, 1)
+albedo_texture = SubResource("NoiseTexture2D_4n3hv")
+metallic_specular = 0.0
+uv1_scale = Vector3(1000, 1000, 1000)
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fyu1u"]
+material = SubResource("StandardMaterial3D_5drkp")
+size = Vector2(1000, 1000)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_we7fh"]
+noise_type = 0
+frequency = 0.05
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_sftgd"]
+width = 64
+height = 64
+seamless = true
+noise = SubResource("FastNoiseLite_we7fh")
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_gjcva"]
+width = 64
+height = 64
+as_normal_map = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eh5m2"]
+albedo_color = Color(0.333333, 0.215686, 0.145098, 1)
+albedo_texture = SubResource("NoiseTexture2D_sftgd")
+metallic_specular = 0.0
+normal_enabled = true
+normal_texture = SubResource("NoiseTexture2D_gjcva")
+uv1_scale = Vector3(1000, 1000, 1000)
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vmjcr"]
+material = SubResource("StandardMaterial3D_eh5m2")
+size = Vector2(1000, 1000)
+
+[sub_resource type="Environment" id="Environment_rrfl4"]
+ambient_light_source = 3
+ambient_light_color = Color(1, 0.776471, 0.541176, 1)
+ambient_light_energy = 5.0
+fog_enabled = true
+fog_light_color = Color(0.305882, 0.317647, 0.235294, 1)
+fog_density = 0.5
+
+[node name="Dungeon" type="Node3D"]
+script = ExtResource("1_1pkgy")
+
+[node name="Player" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+script = ExtResource("2_ditw6")
+
+[node name="Camera" type="Camera3D" parent="Player"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+shape = SubResource("BoxShape3D_aoayj")
+
+[node name="Walls" type="GridMap" parent="."]
+mesh_library = ExtResource("3_n1nch")
+cell_size = Vector3(1, 1, 1)
+cell_center_x = false
+cell_center_z = false
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_fyu1u")
+
+[node name="Ceiling" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 1, 0)
+mesh = SubResource("PlaneMesh_vmjcr")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rrfl4")
