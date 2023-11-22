@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dde3os1720mjj"]
+[gd_scene load_steps=5 format=3 uid="uid://cl0gwx1bmqen"]
 
 [ext_resource type="Script" path="res://scenes/combat.gd" id="1_drawu"]
 [ext_resource type="PackedScene" uid="uid://ib7s2txjkplv" path="res://spell_table.tscn" id="2_g0e1w"]
 [ext_resource type="PackedScene" uid="uid://cpmqq56dyjdg3" path="res://main_gui.tscn" id="3_b73w1"]
+[ext_resource type="AudioStream" uid="uid://depkoakylfpyd" path="res://sound/music/dungeon.wav" id="4_rek8n"]
 
 [node name="combat" type="Node2D"]
 script = ExtResource("1_drawu")
@@ -14,6 +15,11 @@ script = ExtResource("1_drawu")
 [node name="ui_canvas" type="CanvasLayer" parent="."]
 
 [node name="ui" parent="ui_canvas" instance=ExtResource("3_b73w1")]
+
+[node name="combat_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_rek8n")
+volume_db = -6.0
+autoplay = true
 
 [connection signal="player_death" from="." to="." method="_on_player_death"]
 [connection signal="cast_spell" from="game_canvas/SpellTable" to="." method="_on_cast_spell"]

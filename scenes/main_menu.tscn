@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://d4ciovkj4c71i"]
+[gd_scene load_steps=3 format=3 uid="uid://d4ciovkj4c71i"]
 
 [ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_w42o2"]
+[ext_resource type="AudioStream" uid="uid://m06qyxdgfh33" path="res://sound/music/main menu.wav" id="2_q40gq"]
 
 [node name="MainMenu" type="TextureRect"]
 anchors_preset = 15
@@ -51,6 +52,11 @@ text = "Credits"
 [node name="QuitButton" type="Button" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[node name="menu_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_q40gq")
+volume_db = -6.0
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
