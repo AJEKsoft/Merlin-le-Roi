@@ -36,9 +36,9 @@ func spawn_foe():
 	monster.death.connect(_on_foe_death)
 	monster.attack.connect(_on_foe_attack)
 	player_attack.connect(monster._on_attacked)
-	monster.position = get_viewport_rect().size / 2
+	monster.position = $Dungeon/DungeonCamera.position + $Dungeon/DungeonCamera.global_transform.basis.z * -1
 	find_child("foe-name").text = monster.name
-	$game_canvas.add_child(monster)
+	$Dungeon.add_child(monster)
 
 func _on_cast_spell(spell:String):
 	$ui_canvas/ui/spellname.text = spell
