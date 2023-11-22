@@ -8,4 +8,6 @@ script = ExtResource("1_anbd4")
 
 [node name="Player" parent="." instance=ExtResource("2_8kyw0")]
 
+[connection signal="action" from="Player" to="." method="_on_player_action"]
+[connection signal="request_move" from="Player" to="." method="_on_player_request_move"]
 [connection signal="trigger_combat" from="Player" to="." method="_on_trigger_combat"]
