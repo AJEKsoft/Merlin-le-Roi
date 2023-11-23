@@ -32,6 +32,7 @@ func _on_player_action():
 	# We check the tile right in front of the player
 	var forward_position = $Player.get_forward_cell_position()
 	var tile = get_tile_at(forward_position)
+	forward_position = Vector3i(forward_position.x, 0, forward_position.y)
 	# if the tile is a door, we open it
 	if tile == "Door":
 		level.find_child("Walls").set_cell_item(forward_position, -1)
