@@ -16,7 +16,7 @@ var is_moving = false
 func _ready():
 	pass # Replace with function body.
 
-signal enter_tile
+signal enter_tile(tile:Vector2i)
 signal action 
 signal request_move(target:Vector2i)
 
@@ -83,7 +83,7 @@ func _process(delta):
 		if moved >= 1:
 			place_at(grid_target)
 			is_moving = false
-			enter_tile.emit()
+			enter_tile.emit(grid_target)
 		else:
 			# interpolate between current position and target position
 			var intermediate_position = Vector2(grid_position.x, grid_position.y) + (Vector2(grid_target.x, grid_target.y) - Vector2(grid_position.x, grid_position.y)) * moved
