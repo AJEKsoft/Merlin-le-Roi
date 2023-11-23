@@ -13,4 +13,3 @@ func _on_continue_button_pressed():
 	get_tree().get_current_scene().queue_free()
 	get_tree().get_root().add_child(PlayerState.current_scene)
 	get_tree().set_current_scene(PlayerState.current_scene)
-	pass # Replace with function body.

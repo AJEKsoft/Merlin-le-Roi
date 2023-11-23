@@ -65,7 +65,6 @@ func set_lookat(val : float):
 	else:
 		print("ERROR: invalid rotation")
 	self.rotation_degrees = Vector3(0, val, 0)
-	print("self.rotation_degrees = " + str(self.rotation_degrees))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

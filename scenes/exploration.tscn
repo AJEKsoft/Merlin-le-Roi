@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://lbgk1m4m8x08"]
 
 [ext_resource type="Script" path="res://scenes/exploration.gd" id="1_anbd4"]
-[ext_resource type="PackedScene" path="res://levels/player.tscn" id="2_8kyw0"]
+[ext_resource type="PackedScene" uid="uid://cwh13saciofc" path="res://levels/player.tscn" id="2_8kyw0"]
 [ext_resource type="AudioStream" uid="uid://depkoakylfpyd" path="res://sound/music/dungeon.wav" id="3_34t1p"]
 
 [node name="Exploration" type="Node3D"]
@@ -9,12 +9,12 @@ script = ExtResource("1_anbd4")
 
 [node name="Player" parent="." instance=ExtResource("2_8kyw0")]
 
-[connection signal="trigger_combat" from="." to="." method="_on_trigger_combat"]
 [node name="exploration_music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_34t1p")
 volume_db = -6.0
 autoplay = true
 
+[connection signal="trigger_combat" from="." to="." method="_on_trigger_combat"]
 [connection signal="action" from="Player" to="." method="_on_player_action"]
 [connection signal="enter_tile" from="Player" to="." method="_on_player_enter_tile"]
 [connection signal="request_move" from="Player" to="." method="_on_player_request_move"]
