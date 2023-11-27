@@ -30,6 +30,7 @@ func _on_player_action():
 	# if the tile is a door, we open it
 	if tile == "Door":
 		level.find_child("Walls").set_cell_item(forward_position, -1)
+		$DoorSound.play()
 
 func _on_player_request_move(target : Vector2i):
 	var tile = get_tile_at(target)

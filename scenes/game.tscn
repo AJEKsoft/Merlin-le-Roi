@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://mxs46dmuq38m"]
+[gd_scene load_steps=7 format=3 uid="uid://mxs46dmuq38m"]
 
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_4235k"]
 [ext_resource type="PackedScene" uid="uid://cpmqq56dyjdg3" path="res://main_gui.tscn" id="2_7vd4m"]
 [ext_resource type="PackedScene" uid="uid://lbgk1m4m8x08" path="res://scenes/exploration.tscn" id="3_5ablr"]
 [ext_resource type="PackedScene" uid="uid://kcab58t15je2" path="res://monsters/player.tscn" id="4_02imo"]
+[ext_resource type="AudioStream" uid="uid://kkwip3xnn2gx" path="res://sound/effects/door.wav" id="5_rafvx"]
 [ext_resource type="PackedScene" uid="uid://ib7s2txjkplv" path="res://spell_table.tscn" id="6_8kj7a"]
 
 [node name="Game" type="HBoxContainer"]
@@ -26,6 +27,9 @@ render_target_update_mode = 4
 [node name="Exploration" parent="ExplorationViewport/SubViewport" instance=ExtResource("3_5ablr")]
 
 [node name="Player" parent="ExplorationViewport/SubViewport/Exploration" instance=ExtResource("4_02imo")]
+
+[node name="DoorSound" type="AudioStreamPlayer" parent="ExplorationViewport/SubViewport/Exploration"]
+stream = ExtResource("5_rafvx")
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
