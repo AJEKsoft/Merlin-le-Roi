@@ -32,6 +32,7 @@ render_target_update_mode = 4
 [node name="SpellTable" parent="HUD" instance=ExtResource("6_8kj7a")]
 scale = Vector2(0.5, 0.5)
 
+[connection signal="action" from="ExplorationViewport/SubViewport/Exploration/Player" to="ExplorationViewport/SubViewport/Exploration" method="_on_player_action"]
 [connection signal="enter_tile" from="ExplorationViewport/SubViewport/Exploration/Player" to="ExplorationViewport/SubViewport/Exploration" method="_on_player_enter_tile"]
 [connection signal="request_move" from="ExplorationViewport/SubViewport/Exploration/Player" to="ExplorationViewport/SubViewport/Exploration" method="_on_player_request_move"]
 [connection signal="cast_spell" from="HUD/SpellTable" to="ExplorationViewport/SubViewport/Exploration/Player" method="_on_spell_table_cast_spell"]
