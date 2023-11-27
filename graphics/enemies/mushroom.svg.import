@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b4a3msqtyqqqe"
 path.s3tc="res://.godot/imported/mushroom.svg-04b3abe06059adb52539765991900fcc.s3tc.ctex"
+path.etc2="res://.godot/imported/mushroom.svg-04b3abe06059adb52539765991900fcc.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://graphics/enemies/mushroom.svg"
-dest_files=["res://.godot/imported/mushroom.svg-04b3abe06059adb52539765991900fcc.s3tc.ctex"]
+dest_files=["res://.godot/imported/mushroom.svg-04b3abe06059adb52539765991900fcc.s3tc.ctex", "res://.godot/imported/mushroom.svg-04b3abe06059adb52539765991900fcc.etc2.ctex"]
 
 [params]
 
