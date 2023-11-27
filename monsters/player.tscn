@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://kcab58t15je2"]
+
+[ext_resource type="Script" path="res://monsters/Player.gd" id="1_pmeur"]
+[ext_resource type="PackedScene" uid="uid://b03bqjm18dhc5" path="res://monsters/monster.tscn" id="1_whkci"]
+[ext_resource type="Script" path="res://monsters/MonsterAttributes.gd" id="3_miy3u"]
+
+[sub_resource type="Resource" id="Resource_pevim"]
+script = ExtResource("3_miy3u")
+health_regen_rate = 0
+max_health = 100
+max_mana = 50
+mana_regen_rate = 10
+strength = 0
+agility = 0
+intelligence = 0
+magic = 0
+attack_speed = 0
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_dj6il"]
+viewport_path = NodePath("info/SubViewport")
+
+[node name="Player" instance=ExtResource("1_whkci")]
+script = ExtResource("1_pmeur")
+attributes = SubResource("Resource_pevim")
+
+[node name="image" parent="CollisionShape3D" index="0"]
+visible = false
+
+[node name="info" parent="." index="2"]
+visible = false
+texture = SubResource("ViewportTexture_dj6il")
+
+[node name="Camera" type="Camera3D" parent="." index="3"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.5, 0)

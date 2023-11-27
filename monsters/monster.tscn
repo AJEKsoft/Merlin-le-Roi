@@ -60,4 +60,7 @@ text = "monster name
 layout_mode = 2
 tint_progress = Color(0.443137, 0, 0.443137, 1)
 
+[node name="spellStart" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0.7)
+
 [connection signal="death" from="." to="." method="_on_death"]

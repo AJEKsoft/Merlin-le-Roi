@@ -2,14 +2,15 @@
 
 [ext_resource type="Script" path="res://spells/spell.gd" id="1_v6vgs"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_4gif1"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_khkt1"]
+radius = 0.1
 
 [node name="Spell" type="Area3D"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 script = ExtResource("1_v6vgs")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_4gif1")
+shape = SubResource("SphereShape3D_khkt1")
 
 [node name="image" type="Sprite3D" parent="."]
 
