@@ -1,8 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://b03bqjm18dhc5"]
+[gd_scene load_steps=5 format=3 uid="uid://b03bqjm18dhc5"]
 
 [ext_resource type="Script" path="res://monsters/Monster.gd" id="1_6fro6"]
+[ext_resource type="PackedScene" uid="uid://5x8xw48tbe2d" path="res://better_progress.tscn" id="2_6vwx3"]
 
-[node name="Monster" type="Node2D"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_6le85"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_o8vxf"]
+viewport_path = NodePath("info/SubViewport")
+
+[node name="Monster" type="Area3D"]
 script = ExtResource("1_6fro6")
 
 [node name="sounds" type="Node" parent="."]
@@ -13,4 +19,45 @@ script = ExtResource("1_6fro6")
 
 [node name="attack" type="AudioStreamPlayer" parent="sounds"]
 
-[node name="image" type="Sprite2D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("SphereShape3D_6le85")
+
+[node name="image" type="Sprite3D" parent="CollisionShape3D"]
+pixel_size = 0.0156
+billboard = 1
+texture_filter = 0
+
+[node name="info" type="Sprite3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+billboard = 1
+texture_filter = 0
+render_priority = 1
+texture = SubResource("ViewportTexture_o8vxf")
+
+[node name="SubViewport" type="SubViewport" parent="info"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(512, 128)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="info/SubViewport"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -57.0
+offset_right = 57.0
+offset_bottom = 40.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+
+[node name="name" type="Label" parent="info/SubViewport/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "monster name
+"
+
+[node name="health-bar" parent="info/SubViewport/VBoxContainer" instance=ExtResource("2_6vwx3")]
+layout_mode = 2
+tint_progress = Color(0.443137, 0, 0.443137, 1)
+
+[connection signal="death" from="." to="." method="_on_death"]

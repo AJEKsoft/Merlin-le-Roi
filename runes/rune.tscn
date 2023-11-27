@@ -41,13 +41,16 @@ shape = SubResource("CircleShape2D_am736")
 
 [node name="backdrop" type="Sprite2D" parent="."]
 modulate = Color(0.827451, 0.827451, 0.827451, 1)
+texture_filter = 1
 texture = ExtResource("2_cvuty")
 
 [node name="selection" type="Sprite2D" parent="."]
 visible = false
+texture_filter = 1
 texture = ExtResource("3_c1vci")
 
 [node name="image" type="Sprite2D" parent="."]
+texture_filter = 1
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

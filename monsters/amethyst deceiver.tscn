@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dmpjsrhgsm1gb"]
+[gd_scene load_steps=6 format=3 uid="uid://bmylpptppsrvm"]
 
 [ext_resource type="PackedScene" uid="uid://b03bqjm18dhc5" path="res://monsters/monster.tscn" id="1_eclcv"]
 [ext_resource type="Script" path="res://monsters/MonsterAttributes.gd" id="2_2dgjc"]
@@ -16,10 +16,17 @@ intelligence = 8
 magic = 7
 attack_speed = 3
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_hxwk5"]
+viewport_path = NodePath("info/SubViewport")
+
 [node name="Amethyst Deceiver" instance=ExtResource("1_eclcv")]
 attributes = SubResource("Resource_6wl33")
 
-[node name="image" parent="." index="1"]
-modulate = Color(0.768627, 0.556863, 0.811765, 1)
-scale = Vector2(1.00323, 1)
+[node name="image" parent="CollisionShape3D" index="0"]
 texture = ExtResource("2_y6p7y")
+
+[node name="info" parent="." index="2"]
+texture = SubResource("ViewportTexture_hxwk5")
+
+[node name="SubViewport" parent="info" index="0"]
+size = Vector2i(256, 512)

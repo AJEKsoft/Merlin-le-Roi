@@ -18,13 +18,13 @@ func _draw():
 			var runeB = find_child(sequence[i + 1])
 			draw_line(runeA.position, runeB.position, color, thickness, true)
 		var lastRune = find_child(sequence[sequence.size() - 1])
-		draw_line(lastRune.position, to_local(get_viewport().get_mouse_position()), color, thickness, true)
+		draw_line(lastRune.position, get_local_mouse_position(), color, thickness, true)
 
 func _process(_delta):
 	queue_redraw()
 	if get_parent().current_sequence.size() > 0:
 		$LinkParticles.process_material.color = find_child(get_parent().current_sequence[0]).find_child("image").modulate
 		$LinkParticles.emitting = true
-		$LinkParticles.position = to_local(get_viewport().get_mouse_position())
+		$LinkParticles.position = get_local_mouse_position()
 	else:
 		$LinkParticles.emitting = false

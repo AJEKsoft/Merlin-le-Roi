@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4a3msqtyqqqe"
-path.s3tc="res://.godot/imported/mushroom.svg-04b3abe06059adb52539765991900fcc.s3tc.ctex"
+uid="uid://cyyojqmdbestw"
+path.s3tc="res://.godot/imported/fireball.png-b091d27da0395e46b0fcd7dc6d2d4c55.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://graphics/enemies/mushroom.svg"
-dest_files=["res://.godot/imported/mushroom.svg-04b3abe06059adb52539765991900fcc.s3tc.ctex"]
+source_file="res://graphics/spells/fireball.png"
+dest_files=["res://.godot/imported/fireball.png-b091d27da0395e46b0fcd7dc6d2d4c55.s3tc.ctex"]
 
 [params]
 
@@ -33,6 +33,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=0
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

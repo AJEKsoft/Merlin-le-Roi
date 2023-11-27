@@ -1,4 +1,4 @@
-extends Node2D
+extends Area3D
 
 class_name Monster
 
@@ -9,6 +9,8 @@ var health_progress = null
 
 signal attack(value: int)
 signal death
+signal health_changed(value: int)
+
 var health
 var mana
 var attack_timer : Timer = Timer.new()
@@ -21,8 +23,10 @@ func _ready():
 	attack_timer.autostart = true
 	health = attributes.max_health
 	mana = attributes.max_mana
+	health_progress = find_child("health-bar")
 	health_progress.set_max_value(attributes.max_health)
 	health_progress.new_value(health)
+	find_child("name").set_text(self.name)
 	add_child(attack_timer)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -44,3 +48,7 @@ func _on_attacked(damage : int):
 func _on_attack_timeout():
 	attack_sound_player.play()
 	emit_signal("attack", attributes.strength)
+
+
+func _on_death():
+	queue_free()

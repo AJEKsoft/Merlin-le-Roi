@@ -1,24 +1,18 @@
 extends Node3D
 
 var level
-signal trigger_combat
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print("Begin exploration of level", LevelState.current_level)
 	level = load("res://levels/level"+str(LevelState.current_level)+".tscn").instantiate()
+	level.name = "Dungeon"
 	add_child(level)
+	find_child("Player").place_at(Vector2i(0, 0))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-
-func _on_trigger_combat():
-	PlayerState.current_scene = self
-	var combat_intro = load("res://scenes/combat_intro.tscn").instantiate()
-	get_tree().root.add_child(combat_intro)
-	get_tree().set_current_scene(combat_intro)
-	get_tree().root.remove_child(self)
 
 func get_tile_at(pos : Vector2i):
 	var tile_no = level.find_child("Walls").get_cell_item(Vector3i(pos.x, 0, pos.y))
@@ -36,7 +30,6 @@ func _on_player_action():
 	# if the tile is a door, we open it
 	if tile == "Door":
 		level.find_child("Walls").set_cell_item(forward_position, -1)
-		trigger_combat.emit()
 
 func _on_player_request_move(target : Vector2i):
 	var tile = get_tile_at(target)
@@ -48,5 +41,4 @@ func _on_player_enter_tile(tile_pos : Vector2i):
 	var tile = get_tile_at(tile_pos)
 	if tile == "ExitPortal":
 		print("Player entered exit portal")
-		LevelState.current_level += 1
 		get_tree().change_scene_to_file("res://scenes/end_level.tscn")

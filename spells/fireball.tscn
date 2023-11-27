@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://co34m4o1hykfs"]
+
+[ext_resource type="PackedScene" uid="uid://cfw8gapld1ma" path="res://spells/spell.tscn" id="1_de55f"]
+[ext_resource type="Texture2D" uid="uid://cyyojqmdbestw" path="res://graphics/spells/fireball.png" id="2_f45wf"]
+
+[node name="Fireball" instance=ExtResource("1_de55f")]
+damage = 20
+
+[node name="image" parent="." index="1"]
+billboard = 1
+texture = ExtResource("2_f45wf")

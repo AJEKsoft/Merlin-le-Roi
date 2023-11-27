@@ -118,3 +118,8 @@ func get_right() -> Vector2i:
 
 func get_left() -> Vector2i:
 	return Vector2i(-grid_lookat.y, grid_lookat.x)
+
+
+func _on_spell_table_cast_spell(spell:Spell):
+	spell.transform = $spellStart.global_transform
+	owner.add_child(spell)

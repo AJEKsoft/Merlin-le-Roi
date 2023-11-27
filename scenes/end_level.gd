@@ -12,5 +12,5 @@ func _process(delta):
 
 
 func _on_continue_pressed():
-	get_tree().change_scene_to_file("res://scenes/exploration.tscn")
-	pass # Replace with function body.
+	LevelState.current_level += 1
+	get_tree().change_scene_to_file("res://scenes/game.tscn")

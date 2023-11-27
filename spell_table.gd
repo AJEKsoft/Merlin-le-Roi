@@ -18,17 +18,17 @@ var spells = {
 
 signal begin_spell
 signal continue_spell
-signal cast_spell(spell:String)
+signal cast_spell(spell:Spell)
 signal wrong_spell
 
 @export var rotation_speed : float = 1 # rotations per minute
 var radius = 200.0
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	place_runes()
+	pass
 
 func _process(delta : float):
+	place_runes()
 	var angular_speed = rotation_speed * 2 * PI / 60 # radians per second
 	$runes_circle.rotate(delta * angular_speed)
 	for rune in $runes_circle.get_children():
@@ -45,7 +45,8 @@ func place_runes():
 			total_runes += 1
 	var angle_increment = 2*PI / total_runes
 
-	$runes_circle.position = get_viewport_rect().size/2
+	radius = min(get_viewport().size.x, get_viewport().size.y) / 2 - 50
+	$runes_circle.position = Vector2i(radius + 50, radius + 50)
 	var i = 0
 	for child in $runes_circle.get_children():
 		if child is Rune:
@@ -62,15 +63,15 @@ func check_sequence():
 		else:
 			current_spell = null
 			reset_sequence()
-			emit_signal("wrong_spell")
+			wrong_spell.emit()
 	if typeof(current_spell) == TYPE_STRING:
 		reset_sequence()
-		emit_signal("cast_spell", current_spell)
+		cast_spell.emit(load("res://spells/"+current_spell+".tscn").instantiate())
 	elif typeof(current_spell) == TYPE_DICTIONARY:
 		pass
 	else:
 		reset_sequence()
-		emit_signal("wrong_spell")
+		wrong_spell.emit()
 
 func reset_sequence():
 	for rune in current_sequence:
@@ -79,9 +80,9 @@ func reset_sequence():
 
 func _on_rune_selected(rune:String):
 	if current_sequence.size() == 0:
-		emit_signal("begin_spell")
+		begin_spell.emit()
 	else:
-		emit_signal("continue_spell")
+		continue_spell.emit()
 	current_sequence.append(rune)
 	check_sequence()
 
@@ -91,7 +92,7 @@ func _on_wrong_spell():
 func _on_continue_spell():
 	$sequence_continue.play()
 
-func _on_cast_spell(_spell: String):
+func _on_cast_spell(_spell: Spell):
 	$sequence_success.play()
 
 func _on_begin_spell():
