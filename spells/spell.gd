@@ -20,6 +20,7 @@ func _process(delta):
 
 
 func _on_area_entered(area:Area3D):
+	print(area)
 	if area is Monster:
 		area._on_attacked(self.damage)
 		queue_free()
