@@ -5,20 +5,6 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1x51o"]
 
-[sub_resource type="GDScript" id="GDScript_w7aq8"]
-script/source = "extends VBoxContainer
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-"
-
 [node name="ui" type="PanelContainer"]
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,7 +14,6 @@ grow_vertical = 2
 mouse_filter = 1
 theme = ExtResource("1_ct74p")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_1x51o")
-script = ExtResource("1_l347n")
 
 [node name="spellname" type="Label" parent="."]
 layout_mode = 2
@@ -57,7 +42,6 @@ tint_progress = Color(0.509804, 0.184314, 1, 1)
 [node name="health" type="VBoxContainer" parent="bottomarea"]
 layout_mode = 2
 size_flags_horizontal = 3
-script = SubResource("GDScript_w7aq8")
 
 [node name="Label2" type="Label" parent="bottomarea/health"]
 layout_mode = 2
