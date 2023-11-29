@@ -24,7 +24,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("SphereShape3D_6le85")
 
 [node name="image" type="Sprite3D" parent="CollisionShape3D"]
-pixel_size = 0.0156
+pixel_size = 0.0312
 billboard = 1
 texture_filter = 0
 
