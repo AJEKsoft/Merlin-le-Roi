@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dedtkcqy8j055"]
+
+[ext_resource type="Texture2D" uid="uid://cvy71y5ppnr86" path="res://graphics/materials/portal/portal.png" id="1_nuv3w"]
+
+[resource]
+transparency = 1
+specular_mode = 2
+albedo_texture = ExtResource("1_nuv3w")
+metallic_specular = 0.0
+uv1_scale = Vector3(3, 3, 3)
+texture_filter = 0
