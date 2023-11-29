@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bil0d0ae2ado6"]
+
+[sub_resource type="SystemFont" id="SystemFont_7x4dc"]
+font_names = PackedStringArray("Unifont")
+hinting = 0
+subpixel_positioning = 0
+
+[resource]
+default_font = SubResource("SystemFont_7x4dc")

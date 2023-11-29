@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpmqq56dyjdg3"]
+[gd_scene load_steps=4 format=3 uid="uid://cpmqq56dyjdg3"]
 
 [ext_resource type="PackedScene" uid="uid://5x8xw48tbe2d" path="res://better_progress.tscn" id="1_5p44q"]
+[ext_resource type="Theme" uid="uid://bil0d0ae2ado6" path="res://ui_theme.tres" id="1_ct74p"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1x51o"]
 
@@ -11,6 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+theme = ExtResource("1_ct74p")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_1x51o")
 
 [node name="spellname" type="Label" parent="."]
