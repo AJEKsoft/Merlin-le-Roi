@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://xmetu5kso1f2"]
+
+[ext_resource type="Texture2D" uid="uid://bswrhu0h3vdhd" path="res://graphics/materials/gravel/gravel.png" id="1_2n8oj"]
+
+[resource]
+specular_mode = 2
+albedo_texture = ExtResource("1_2n8oj")
+metallic_specular = 0.0
+uv1_scale = Vector3(2, 2, 2)
+texture_filter = 0
