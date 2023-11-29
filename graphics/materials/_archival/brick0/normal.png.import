@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dryj5d6mhmli3"
-path.s3tc="res://.godot/imported/normal.png-ddd6c3dd32d02087b5ddcd3b5b6f308c.s3tc.ctex"
-path.etc2="res://.godot/imported/normal.png-ddd6c3dd32d02087b5ddcd3b5b6f308c.etc2.ctex"
+path.s3tc="res://.godot/imported/normal.png-3efa16e3f43f73f0fe40e4d8cac1c467.s3tc.ctex"
+path.etc2="res://.godot/imported/normal.png-3efa16e3f43f73f0fe40e4d8cac1c467.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://graphics/materials/brick0/normal.png"
-dest_files=["res://.godot/imported/normal.png-ddd6c3dd32d02087b5ddcd3b5b6f308c.s3tc.ctex", "res://.godot/imported/normal.png-ddd6c3dd32d02087b5ddcd3b5b6f308c.etc2.ctex"]
+source_file="res://graphics/materials/_archival/brick0/normal.png"
+dest_files=["res://.godot/imported/normal.png-3efa16e3f43f73f0fe40e4d8cac1c467.s3tc.ctex", "res://.godot/imported/normal.png-3efa16e3f43f73f0fe40e4d8cac1c467.etc2.ctex"]
 
 [params]
 

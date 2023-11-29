@@ -1,7 +1,7 @@
 [gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://dhbojtpomke0h"]
 
-[ext_resource type="Texture2D" uid="uid://pah242t07bo8" path="res://graphics/materials/broken_brick0/broken_albedo.png" id="1_jp3x8"]
-[ext_resource type="Texture2D" uid="uid://dryj5d6mhmli3" path="res://graphics/materials/brick0/normal.png" id="2_4ypff"]
+[ext_resource type="Texture2D" uid="uid://pah242t07bo8" path="res://graphics/materials/_archival/broken_brick0/broken_albedo.png" id="1_jp3x8"]
+[ext_resource type="Texture2D" uid="uid://dryj5d6mhmli3" path="res://graphics/materials/_archival/brick0/normal.png" id="2_4ypff"]
 
 [resource]
 transparency = 1

@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dik06yhv468hi"
-path.s3tc="res://.godot/imported/albedo.png-2b380b5aa1d9c5ba05858a76ef884efa.s3tc.ctex"
-path.etc2="res://.godot/imported/albedo.png-2b380b5aa1d9c5ba05858a76ef884efa.etc2.ctex"
+uid="uid://brfr4kwlsn08w"
+path.s3tc="res://.godot/imported/wood.png-536a4deec377973ae8cf532fe9ec693f.s3tc.ctex"
+path.etc2="res://.godot/imported/wood.png-536a4deec377973ae8cf532fe9ec693f.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://graphics/materials/door0/albedo.png"
-dest_files=["res://.godot/imported/albedo.png-2b380b5aa1d9c5ba05858a76ef884efa.s3tc.ctex", "res://.godot/imported/albedo.png-2b380b5aa1d9c5ba05858a76ef884efa.etc2.ctex"]
+source_file="res://graphics/materials/wood/wood.png"
+dest_files=["res://.godot/imported/wood.png-536a4deec377973ae8cf532fe9ec693f.s3tc.ctex", "res://.godot/imported/wood.png-536a4deec377973ae8cf532fe9ec693f.etc2.ctex"]
 
 [params]
 

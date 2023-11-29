@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://pah242t07bo8"
-path.s3tc="res://.godot/imported/broken_albedo.png-244600e427421670b3c6157c959ef3a0.s3tc.ctex"
-path.etc2="res://.godot/imported/broken_albedo.png-244600e427421670b3c6157c959ef3a0.etc2.ctex"
+path.s3tc="res://.godot/imported/broken_albedo.png-8a535e3ed0b249bb3a042456f115f1ee.s3tc.ctex"
+path.etc2="res://.godot/imported/broken_albedo.png-8a535e3ed0b249bb3a042456f115f1ee.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://graphics/materials/broken_brick0/broken_albedo.png"
-dest_files=["res://.godot/imported/broken_albedo.png-244600e427421670b3c6157c959ef3a0.s3tc.ctex", "res://.godot/imported/broken_albedo.png-244600e427421670b3c6157c959ef3a0.etc2.ctex"]
+source_file="res://graphics/materials/_archival/broken_brick0/broken_albedo.png"
+dest_files=["res://.godot/imported/broken_albedo.png-8a535e3ed0b249bb3a042456f115f1ee.s3tc.ctex", "res://.godot/imported/broken_albedo.png-8a535e3ed0b249bb3a042456f115f1ee.etc2.ctex"]
 
 [params]
 

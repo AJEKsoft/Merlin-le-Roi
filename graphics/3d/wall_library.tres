@@ -1,8 +1,8 @@
 [gd_resource type="MeshLibrary" load_steps=21 format=3 uid="uid://d0fewnvqwxyhm"]
 
 [ext_resource type="Material" uid="uid://diasggjag5vef" path="res://graphics/materials/brick/brick.tres" id="1_r5vyc"]
-[ext_resource type="Material" uid="uid://d0hyibbhfkcfm" path="res://graphics/materials/broken_brick0.tres" id="3_to4ux"]
-[ext_resource type="Material" uid="uid://d1euvpis2ylre" path="res://graphics/materials/door0.tres" id="4_qfrgs"]
+[ext_resource type="Material" uid="uid://bi5wgg51mkvk0" path="res://graphics/materials/broken_brick/broken_brick.tres" id="2_ejm88"]
+[ext_resource type="Material" uid="uid://c4lovpqdyxnsi" path="res://graphics/materials/door/door.tres" id="3_8xo6l"]
 [ext_resource type="Material" uid="uid://dedtkcqy8j055" path="res://graphics/materials/portal/portal.tres" id="4_x03wa"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_r3hiw"]
@@ -26,7 +26,7 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 
 [sub_resource type="BoxMesh" id="BoxMesh_6gihk"]
 lightmap_size_hint = Vector2i(14, 21)
-material = ExtResource("3_to4ux")
+material = ExtResource("2_ejm88")
 
 [sub_resource type="Image" id="Image_05rsk"]
 data = {
@@ -44,7 +44,7 @@ image = SubResource("Image_05rsk")
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [sub_resource type="BoxMesh" id="BoxMesh_73fma"]
-material = ExtResource("4_qfrgs")
+material = ExtResource("3_8xo6l")
 size = Vector3(0.2, 1, 1)
 
 [sub_resource type="Image" id="Image_3uc20"]

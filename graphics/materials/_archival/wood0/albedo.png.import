@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ouhumhtx7s8e"
-path="res://.godot/imported/albedo.png-19a433405b67a3afa9316ed651f93c4d.ctex"
+path="res://.godot/imported/albedo.png-dc44e20e25ed70107e2fc9d3f939c9a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/materials/wood0/albedo.png"
-dest_files=["res://.godot/imported/albedo.png-19a433405b67a3afa9316ed651f93c4d.ctex"]
+source_file="res://graphics/materials/_archival/wood0/albedo.png"
+dest_files=["res://.godot/imported/albedo.png-dc44e20e25ed70107e2fc9d3f939c9a1.ctex"]
 
 [params]
 

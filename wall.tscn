@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://bq5r261y84ada"]
 
-[ext_resource type="Material" uid="uid://cv5ol82lvq2sm" path="res://graphics/materials/brick0.tres" id="1_hs05q"]
-[ext_resource type="Material" uid="uid://d0hyibbhfkcfm" path="res://graphics/materials/broken_brick0.tres" id="2_gv3w5"]
-[ext_resource type="Material" uid="uid://d1euvpis2ylre" path="res://graphics/materials/door0.tres" id="3_3a6qg"]
+[ext_resource type="Material" uid="uid://cv5ol82lvq2sm" path="res://graphics/materials/_archival/brick0.tres" id="1_hs05q"]
+[ext_resource type="Material" uid="uid://d0hyibbhfkcfm" path="res://graphics/materials/_archival/broken_brick0.tres" id="2_gv3w5"]
+[ext_resource type="Material" uid="uid://d1euvpis2ylre" path="res://graphics/materials/_archival/door0.tres" id="3_3a6qg"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_4ivvk"]
 lightmap_size_hint = Vector2i(14, 21)
