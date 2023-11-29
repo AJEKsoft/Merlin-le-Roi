@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b03bqjm18dhc5"]
+[gd_scene load_steps=6 format=3 uid="uid://b03bqjm18dhc5"]
 
 [ext_resource type="Script" path="res://monsters/Monster.gd" id="1_6fro6"]
 [ext_resource type="PackedScene" uid="uid://5x8xw48tbe2d" path="res://better_progress.tscn" id="2_6vwx3"]
+[ext_resource type="Theme" uid="uid://bil0d0ae2ado6" path="res://ui_theme.tres" id="2_lxpi1"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_6le85"]
 
@@ -49,6 +50,7 @@ offset_right = 57.0
 offset_bottom = 40.0
 grow_horizontal = 2
 size_flags_horizontal = 4
+theme = ExtResource("2_lxpi1")
 
 [node name="name" type="Label" parent="info/SubViewport/VBoxContainer"]
 layout_mode = 2
