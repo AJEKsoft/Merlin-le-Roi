@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://cjsncwifi1w4u"]
+
+[ext_resource type="PackedScene" uid="uid://va1b3v1y3t75" path="res://monsters/base/hostile_monster.tscn" id="1_6ca5d"]
+[ext_resource type="Script" path="res://monsters/base/MonsterAttributes.gd" id="2_t422i"]
+[ext_resource type="Texture2D" uid="uid://b4a3msqtyqqqe" path="res://graphics/enemies/mushroom.svg" id="3_yn1s8"]
+
+[sub_resource type="Resource" id="Resource_uge6r"]
+script = ExtResource("2_t422i")
+health_regen_rate = 10
+max_health = 100
+max_mana = 0
+mana_regen_rate = 1
+strength = 0
+agility = 0
+intelligence = 0
+magic = 0
+attack_speed = 0
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_82vrh"]
+viewport_path = NodePath("info/SubViewport")
+
+[node name="Amethyst Deceiver" instance=ExtResource("1_6ca5d")]
+attributes = SubResource("Resource_uge6r")
+
+[node name="image" parent="CollisionShape3D" index="0"]
+texture = ExtResource("3_yn1s8")
+
+[node name="info" parent="." index="2"]
+texture = SubResource("ViewportTexture_82vrh")

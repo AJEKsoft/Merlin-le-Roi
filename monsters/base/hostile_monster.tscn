@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://va1b3v1y3t75"]
+
+[ext_resource type="PackedScene" uid="uid://b03bqjm18dhc5" path="res://monsters/base/monster.tscn" id="1_rf0f0"]
+[ext_resource type="Script" path="res://monsters/base/HostileMonster.gd" id="2_ygic8"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_5eypy"]
+viewport_path = NodePath("info/SubViewport")
+
+[node name="HostileMonster" instance=ExtResource("1_rf0f0")]
+script = ExtResource("2_ygic8")
+
+[node name="info" parent="." index="2"]
+texture = SubResource("ViewportTexture_5eypy")
+
+[node name="Attack" type="Timer" parent="." index="4"]
+autostart = true
+
+[connection signal="timeout" from="Attack" to="." method="_on_attack_timeout"]

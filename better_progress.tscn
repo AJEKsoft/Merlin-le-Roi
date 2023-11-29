@@ -7,29 +7,23 @@
 [ext_resource type="Texture2D" uid="uid://c64l5e3ojhyv6" path="res://graphics/ui/bars/progress_delta.png" id="4_1c0wf"]
 
 [node name="BetterProgress" type="TextureProgressBar"]
-offset_right = 128.0
-offset_bottom = 42.0
+texture_filter = 1
+offset_right = 64.0
+offset_bottom = 20.0
+size_flags_horizontal = 4
 step = 0.05
 value = 75.0
-nine_patch_stretch = true
-stretch_margin_left = 64
-stretch_margin_top = 21
-stretch_margin_right = 64
-stretch_margin_bottom = 21
 texture_under = ExtResource("1_1fr71")
 texture_progress = ExtResource("4_1c0wf")
 script = ExtResource("3_1wqu7")
 
 [node name="progress" type="TextureProgressBar" parent="."]
+texture_filter = 1
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 64.0
+offset_bottom = 20.0
 step = 0.05
 value = 50.0
-nine_patch_stretch = true
 stretch_margin_left = 64
 stretch_margin_top = 21
 stretch_margin_right = 64

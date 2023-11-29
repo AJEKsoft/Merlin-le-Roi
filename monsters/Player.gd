@@ -2,6 +2,8 @@ extends Monster
 
 class_name Player
 
+var mana_progress
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	super._ready()

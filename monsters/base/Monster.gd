@@ -8,8 +8,14 @@ var health_progress = null
 @export var attributes : MonsterAttributes
 
 signal attack(value: int)
+signal damaged(damage: int)
+signal lost_mana(value : int)
 signal death
-signal health_changed(value: int)
+signal update_health(max : int, current : int)
+signal update_mana(max : int, current : int)
+signal enter_tile(tile:Vector2i)
+signal action 
+signal request_move(target:Vector2i)
 
 var health : int
 var mana : int
@@ -32,15 +38,13 @@ var moved = 0 # in meters, how much we have moved
 var movement_speed = .3 # seconds to complete the movement
 var is_moving = false
 
-signal enter_tile(tile:Vector2i)
-signal action 
-signal request_move(target:Vector2i)
-
 func _ready():
 	attack_timer.timeout.connect(_on_attack_timeout)
 	attack_timer.autostart = true
 	health = attributes.max_health
 	mana = attributes.max_mana
+	update_health.emit(attributes.max_health, health)
+	update_mana.emit(attributes.max_mana, mana)
 	connect_to_bars()
 
 func connect_to_bars():
@@ -81,15 +85,14 @@ func _on_attacked(damage : int):
 	health_progress.reduce_value(damage)
 	if health <= 0:
 		death_sound_player.play()
-		emit_signal("death")
+		death.emit()
 		queue_free()
 	else:
 		hurt_sound_player.play()
 
 func _on_attack_timeout():
 	attack_sound_player.play()
-	emit_signal("attack", attributes.strength)
-
+	attack.emit(attributes.strength)
 
 func _on_death():
 	queue_free()

@@ -8,10 +8,10 @@ var selected = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$image.scale = Vector2(1, 1)
+	$image.scale = Vector2(.3, .3)
 
-	$selection.scale = Vector2(1, 1)
-	$backdrop.scale = Vector2(1, 1)
+	$selection.scale = $image.scale
+	$backdrop.scale = $image.scale
 	# Set the size of the collision shape to coincide with the image
 	$collision.shape.radius = $image.texture.get_width() * $image.scale.x / 2
 	$particles.modulate = $image.modulate

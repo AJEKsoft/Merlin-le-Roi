@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://kcab58t15je2"]
 
 [ext_resource type="Script" path="res://monsters/Player.gd" id="1_pmeur"]
-[ext_resource type="PackedScene" uid="uid://b03bqjm18dhc5" path="res://monsters/monster.tscn" id="1_whkci"]
-[ext_resource type="Script" path="res://monsters/MonsterAttributes.gd" id="3_miy3u"]
+[ext_resource type="PackedScene" uid="uid://b03bqjm18dhc5" path="res://monsters/base/monster.tscn" id="1_trgg1"]
+[ext_resource type="Script" path="res://monsters/base/MonsterAttributes.gd" id="3_miy3u"]
 
 [sub_resource type="Resource" id="Resource_pevim"]
 script = ExtResource("3_miy3u")
@@ -19,7 +19,8 @@ attack_speed = 0
 [sub_resource type="ViewportTexture" id="ViewportTexture_dj6il"]
 viewport_path = NodePath("info/SubViewport")
 
-[node name="Player" instance=ExtResource("1_whkci")]
+[node name="Player" instance=ExtResource("1_trgg1")]
+collision_layer = 3
 script = ExtResource("1_pmeur")
 attributes = SubResource("Resource_pevim")
 

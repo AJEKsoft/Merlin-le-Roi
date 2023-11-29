@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b03bqjm18dhc5"]
 
-[ext_resource type="Script" path="res://monsters/Monster.gd" id="1_6fro6"]
+[ext_resource type="Script" path="res://monsters/base/Monster.gd" id="1_1r4wo"]
 [ext_resource type="PackedScene" uid="uid://5x8xw48tbe2d" path="res://better_progress.tscn" id="2_6vwx3"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_6le85"]
@@ -9,7 +9,7 @@
 viewport_path = NodePath("info/SubViewport")
 
 [node name="Monster" type="Area3D"]
-script = ExtResource("1_6fro6")
+script = ExtResource("1_1r4wo")
 
 [node name="sounds" type="Node" parent="."]
 

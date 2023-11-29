@@ -25,14 +25,16 @@ signal wrong_spell
 var radius = 200.0
 
 func _ready():
+	radius = 87
+	place_runes()
 	pass
 
 func _process(delta : float):
-	place_runes()
 	var angular_speed = rotation_speed * 2 * PI / 60 # radians per second
 	$runes_circle.rotate(delta * angular_speed)
 	for rune in $runes_circle.get_children():
 		rune.rotate(-delta * angular_speed)
+
 func _draw():
 	# draw a circle behind the runes
 	draw_arc($runes_circle.position, radius, 0, 2*PI, 64, Color(1,1,1,0.5), 2)
@@ -45,8 +47,7 @@ func place_runes():
 			total_runes += 1
 	var angle_increment = 2*PI / total_runes
 
-	radius = min(get_viewport().size.x, get_viewport().size.y) / 2 - 50
-	$runes_circle.position = Vector2i(radius + 50, radius + 50)
+	$runes_circle.position = Vector2i(107, 107)
 	var i = 0
 	for child in $runes_circle.get_children():
 		if child is Rune:

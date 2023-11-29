@@ -29,6 +29,7 @@ initial_velocity_max = 200.0
 orbit_velocity_min = 0.0
 orbit_velocity_max = 0.0
 scale_min = 0.1
+scale_max = 0.2
 
 [node name="SpellTable" type="Node2D"]
 script = ExtResource("1_r5jka")
