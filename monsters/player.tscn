@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://kcab58t15je2"]
+[gd_scene load_steps=7 format=3 uid="uid://kcab58t15je2"]
 
 [ext_resource type="Script" path="res://monsters/Player.gd" id="1_pmeur"]
 [ext_resource type="PackedScene" uid="uid://b03bqjm18dhc5" path="res://monsters/base/monster.tscn" id="1_trgg1"]
 [ext_resource type="Script" path="res://monsters/base/MonsterAttributes.gd" id="3_miy3u"]
+[ext_resource type="AudioStream" uid="uid://blp50eujw6tq4" path="res://sound/effects/spell_cast.wav" id="4_o7cw8"]
 
 [sub_resource type="Resource" id="Resource_pevim"]
 script = ExtResource("3_miy3u")
@@ -23,6 +24,9 @@ viewport_path = NodePath("info/SubViewport")
 collision_layer = 3
 script = ExtResource("1_pmeur")
 attributes = SubResource("Resource_pevim")
+
+[node name="spell" type="AudioStreamPlayer" parent="sounds" index="3"]
+stream = ExtResource("4_o7cw8")
 
 [node name="image" parent="CollisionShape3D" index="0"]
 visible = false

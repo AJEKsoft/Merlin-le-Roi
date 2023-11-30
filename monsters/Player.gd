@@ -11,6 +11,7 @@ func _ready():
 func _on_spell_table_cast_spell(spell:Spell):
 	spell.transform = $spellStart.global_transform
 	owner.add_child(spell)
+	$sounds/spell.play()
 
 func _process(delta):
 	super._process(delta)
