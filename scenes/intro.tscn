@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://crqkhv7odyp2y"]
 
-[ext_resource type="Theme" uid="uid://bil0d0ae2ado6" path="res://ui_theme.tres" id="1_kn63d"]
+[ext_resource type="Theme" uid="uid://bwww1bs7q3brd" path="res://ui_theme.tres" id="1_kn63d"]
 [ext_resource type="Script" path="res://scenes/intro.gd" id="1_m3scc"]
 [ext_resource type="Texture2D" uid="uid://4y51lqv7f4mm" path="res://graphics/runes/virgo.svg" id="2_mwxro"]
 [ext_resource type="Texture2D" uid="uid://8pxotjncu3e3" path="res://graphics/runes/pisces.svg" id="3_eaass"]
