@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dq8wmhuobipv"
+path="res://.godot/imported/main menu.ogg-b7bf79f07d03d175eccd18d79c2e4ae8.oggvorbisstr"
+
+[deps]
+
+source_file="res://sound/music/main menu.ogg"
+dest_files=["res://.godot/imported/main menu.ogg-b7bf79f07d03d175eccd18d79c2e4ae8.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
