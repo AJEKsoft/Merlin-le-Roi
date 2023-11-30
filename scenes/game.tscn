@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://mxs46dmuq38m"]
+[gd_scene load_steps=8 format=3 uid="uid://mxs46dmuq38m"]
 
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_4235k"]
 [ext_resource type="PackedScene" uid="uid://cpmqq56dyjdg3" path="res://main_gui.tscn" id="2_7vd4m"]
 [ext_resource type="PackedScene" uid="uid://lbgk1m4m8x08" path="res://scenes/exploration.tscn" id="3_5ablr"]
 [ext_resource type="PackedScene" uid="uid://kcab58t15je2" path="res://monsters/player.tscn" id="4_02imo"]
+[ext_resource type="Script" path="res://scenes/main_gui.gd" id="4_iobvo"]
 [ext_resource type="AudioStream" uid="uid://kkwip3xnn2gx" path="res://sound/effects/door.wav" id="5_rafvx"]
 [ext_resource type="PackedScene" uid="uid://ib7s2txjkplv" path="res://spell_table.tscn" id="6_8kj7a"]
 
@@ -31,6 +32,7 @@ size = Vector2i(640, 480)
 render_target_update_mode = 4
 
 [node name="ui" parent="ExplorationViewport/SubViewport" instance=ExtResource("2_7vd4m")]
+script = ExtResource("4_iobvo")
 
 [node name="Exploration" parent="ExplorationViewport/SubViewport" instance=ExtResource("3_5ablr")]
 
@@ -41,5 +43,9 @@ stream = ExtResource("5_rafvx")
 
 [connection signal="cast_spell" from="HUD/SpellTable" to="ExplorationViewport/SubViewport/Exploration/Player" method="_on_spell_table_cast_spell"]
 [connection signal="action" from="ExplorationViewport/SubViewport/Exploration/Player" to="ExplorationViewport/SubViewport/Exploration" method="_on_player_action"]
+[connection signal="damaged" from="ExplorationViewport/SubViewport/Exploration/Player" to="ExplorationViewport/SubViewport/ui" method="_on_player_damaged"]
 [connection signal="enter_tile" from="ExplorationViewport/SubViewport/Exploration/Player" to="ExplorationViewport/SubViewport/Exploration" method="_on_player_enter_tile"]
+[connection signal="lost_mana" from="ExplorationViewport/SubViewport/Exploration/Player" to="ExplorationViewport/SubViewport/ui" method="_on_player_lost_mana"]
 [connection signal="request_move" from="ExplorationViewport/SubViewport/Exploration/Player" to="ExplorationViewport/SubViewport/Exploration" method="_on_player_request_move"]
+[connection signal="update_health" from="ExplorationViewport/SubViewport/Exploration/Player" to="ExplorationViewport/SubViewport/ui" method="_on_player_update_health"]
+[connection signal="update_mana" from="ExplorationViewport/SubViewport/Exploration/Player" to="ExplorationViewport/SubViewport/ui" method="_on_player_update_mana"]
