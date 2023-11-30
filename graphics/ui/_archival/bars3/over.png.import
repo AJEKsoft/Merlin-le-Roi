@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cd84cmjyeqfs5"
-path="res://.godot/imported/mana.png-eda79ec5918fd8eb8a011c5ecdbcceb4.ctex"
+uid="uid://lca6qkwkcq2t"
+path="res://.godot/imported/over.png-55946d0e05277ba5a473c5de5bcd6384.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/ui/bars/mana.png"
-dest_files=["res://.godot/imported/mana.png-eda79ec5918fd8eb8a011c5ecdbcceb4.ctex"]
+source_file="res://graphics/ui/_archival/bars3/over.png"
+dest_files=["res://.godot/imported/over.png-55946d0e05277ba5a473c5de5bcd6384.ctex"]
 
 [params]
 
