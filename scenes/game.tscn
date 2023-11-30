@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://mxs46dmuq38m"]
 
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_4235k"]
-[ext_resource type="PackedScene" uid="uid://cpmqq56dyjdg3" path="res://scenes/main_gui.tscn" id="2_7vd4m"]
+[ext_resource type="Theme" uid="uid://bwww1bs7q3brd" path="res://graphics/ui/ui_theme.tres" id="1_irrgr"]
+[ext_resource type="PackedScene" uid="uid://5x8xw48tbe2d" path="res://better_progress.tscn" id="2_1of7b"]
 [ext_resource type="PackedScene" uid="uid://lbgk1m4m8x08" path="res://scenes/exploration.tscn" id="3_5ablr"]
 [ext_resource type="PackedScene" uid="uid://kcab58t15je2" path="res://monsters/player.tscn" id="4_02imo"]
-[ext_resource type="Script" path="res://scenes/main_gui.gd" id="4_iobvo"]
 [ext_resource type="AudioStream" uid="uid://kkwip3xnn2gx" path="res://sound/effects/door.wav" id="5_rafvx"]
 [ext_resource type="PackedScene" uid="uid://ib7s2txjkplv" path="res://spell_table.tscn" id="6_8kj7a"]
 
@@ -15,11 +15,51 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_irrgr")
 script = ExtResource("1_4235k")
 
 [node name="HUD" type="CanvasLayer" parent="."]
 offset = Vector2(640, 0)
 transform = Transform2D(1, 0, 0, 1, 640, 0)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -640.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_irrgr")
+alignment = 2
+
+[node name="Bars" type="HBoxContainer" parent="HUD/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Health" type="VBoxContainer" parent="HUD/VBoxContainer/Bars"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/VBoxContainer/Bars/Health"]
+layout_mode = 2
+text = "Health"
+horizontal_alignment = 1
+
+[node name="player-health-bar" parent="HUD/VBoxContainer/Bars/Health" instance=ExtResource("2_1of7b")]
+layout_mode = 2
+tint_progress = Color(1, 0, 0, 1)
+
+[node name="Mana" type="VBoxContainer" parent="HUD/VBoxContainer/Bars"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/VBoxContainer/Bars/Mana"]
+layout_mode = 2
+text = "Mana"
+horizontal_alignment = 1
+
+[node name="player-mana-bar" parent="HUD/VBoxContainer/Bars/Mana" instance=ExtResource("2_1of7b")]
+layout_mode = 2
+tint_progress = Color(0, 0, 1, 1)
 
 [node name="SpellTable" parent="HUD" instance=ExtResource("6_8kj7a")]
 
@@ -31,9 +71,6 @@ handle_input_locally = false
 size = Vector2i(640, 480)
 render_target_update_mode = 4
 
-[node name="ui" parent="ExplorationViewport/SubViewport" instance=ExtResource("2_7vd4m")]
-script = ExtResource("4_iobvo")
-
 [node name="Exploration" parent="ExplorationViewport/SubViewport" instance=ExtResource("3_5ablr")]
 
 [node name="Player" parent="ExplorationViewport/SubViewport/Exploration" instance=ExtResource("4_02imo")]
@@ -43,9 +80,9 @@ stream = ExtResource("5_rafvx")
 
 [connection signal="cast_spell" from="HUD/SpellTable" to="ExplorationViewport/SubViewport/Exploration/Player" method="_on_spell_table_cast_spell"]
 [connection signal="action" from="ExplorationViewport/SubViewport/Exploration/Player" to="ExplorationViewport/SubViewport/Exploration" method="_on_player_action"]
-[connection signal="damaged" from="ExplorationViewport/SubViewport/Exploration/Player" to="ExplorationViewport/SubViewport/ui" method="_on_player_damaged"]
+[connection signal="damaged" from="ExplorationViewport/SubViewport/Exploration/Player" to="." method="_on_player_damaged"]
 [connection signal="enter_tile" from="ExplorationViewport/SubViewport/Exploration/Player" to="ExplorationViewport/SubViewport/Exploration" method="_on_player_enter_tile"]
-[connection signal="lost_mana" from="ExplorationViewport/SubViewport/Exploration/Player" to="ExplorationViewport/SubViewport/ui" method="_on_player_lost_mana"]
+[connection signal="lost_mana" from="ExplorationViewport/SubViewport/Exploration/Player" to="." method="_on_player_lost_mana"]
 [connection signal="request_move" from="ExplorationViewport/SubViewport/Exploration/Player" to="ExplorationViewport/SubViewport/Exploration" method="_on_player_request_move"]
-[connection signal="update_health" from="ExplorationViewport/SubViewport/Exploration/Player" to="ExplorationViewport/SubViewport/ui" method="_on_player_update_health"]
-[connection signal="update_mana" from="ExplorationViewport/SubViewport/Exploration/Player" to="ExplorationViewport/SubViewport/ui" method="_on_player_update_mana"]
+[connection signal="update_health" from="ExplorationViewport/SubViewport/Exploration/Player" to="." method="_on_player_update_health"]
+[connection signal="update_mana" from="ExplorationViewport/SubViewport/Exploration/Player" to="." method="_on_player_update_mana"]
