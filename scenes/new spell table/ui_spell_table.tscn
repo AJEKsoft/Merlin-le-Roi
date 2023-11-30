@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://ch8j25rdemwbj"]
+
+[ext_resource type="Theme" uid="uid://bwww1bs7q3brd" path="res://graphics/ui/ui_theme.tres" id="1_o7b2b"]
+[ext_resource type="PackedScene" uid="uid://cg6id1pju5wc3" path="res://scenes/new spell table/radial_container.tscn" id="2_cklf2"]
+[ext_resource type="Texture2D" uid="uid://c8dmafgwvvrm3" path="res://graphics/runes/aquarius.svg" id="2_ysn0e"]
+
+[node name="Spell Table" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -854.0
+offset_bottom = -480.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_o7b2b")
+
+[node name="RadialContainer" parent="." instance=ExtResource("2_cklf2")]
+layout_mode = 0
+offset_right = 854.0
+offset_bottom = 480.0
+child_size = 50
+radius = 100
+
+[node name="TextureButton" type="TextureButton" parent="RadialContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_ysn0e")
+
+[node name="TextureButton2" type="TextureButton" parent="RadialContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_ysn0e")
+
+[node name="TextureButton3" type="TextureButton" parent="RadialContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_ysn0e")
+
+[node name="TextureButton4" type="TextureButton" parent="RadialContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_ysn0e")
