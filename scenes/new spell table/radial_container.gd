@@ -12,10 +12,14 @@ func place_elements():
 	if elements.size() == 0:
 		return
 
-	var centre = self.size / 2 - Vector2(radius / 2, radius / 2)
-
+	var position_offset = Vector2(radius, radius)
+	
+	# Since runes are of equal size (at least for now), this will do.
+	# However, a RadialContainer should be rather universal...
+	self.size = position_offset * Vector2(2, 2) + elements[0].size
+	
 	var angle_offset = (2*PI) / elements.size()	
 	var angle = 0
 	for element in elements:
-		element.position = centre - Vector2(radius, 0).rotated(angle)
+		element.position = position_offset + Vector2(radius, 0).rotated(angle)
 		angle += angle_offset
