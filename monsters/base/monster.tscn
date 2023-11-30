@@ -30,6 +30,7 @@ texture_filter = 0
 
 [node name="info" type="Sprite3D" parent="."]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+pixel_size = 0.02
 billboard = 1
 texture_filter = 0
 render_priority = 1
@@ -38,16 +39,14 @@ texture = SubResource("ViewportTexture_o8vxf")
 [node name="SubViewport" type="SubViewport" parent="info"]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(512, 128)
+size = Vector2i(128, 64)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="info/SubViewport"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -57.0
-offset_right = 57.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
 
 [node name="name" type="Label" parent="info/SubViewport/VBoxContainer"]
