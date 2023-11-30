@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://5x8xw48tbe2d"]
 
-[ext_resource type="Texture2D" uid="uid://ch7pqsqgmg2ds" path="res://graphics/ui/bars/health_under.png" id="1_1fr71"]
-[ext_resource type="Texture2D" uid="uid://br2x15h0gawkw" path="res://graphics/ui/bars/health_over.png" id="1_jqyke"]
-[ext_resource type="Texture2D" uid="uid://c0h3jom523xg3" path="res://graphics/ui/bars/health_progress.png" id="2_yqqmw"]
+[ext_resource type="Texture2D" uid="uid://ch7pqsqgmg2ds" path="res://graphics/ui/_archival/bars/health_under.png" id="1_1fr71"]
+[ext_resource type="Texture2D" uid="uid://br2x15h0gawkw" path="res://graphics/ui/_archival/bars/health_over.png" id="1_jqyke"]
+[ext_resource type="Texture2D" uid="uid://c0h3jom523xg3" path="res://graphics/ui/_archival/bars/health_progress.png" id="2_yqqmw"]
 [ext_resource type="Script" path="res://better_progress.gd" id="3_1wqu7"]
-[ext_resource type="Texture2D" uid="uid://c64l5e3ojhyv6" path="res://graphics/ui/bars/progress_delta.png" id="4_1c0wf"]
+[ext_resource type="Texture2D" uid="uid://c64l5e3ojhyv6" path="res://graphics/ui/_archival/bars/progress_delta.png" id="4_1c0wf"]
 
 [node name="BetterProgress" type="TextureProgressBar"]
 texture_filter = 1

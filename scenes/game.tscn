@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://mxs46dmuq38m"]
 
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_4235k"]
-[ext_resource type="PackedScene" uid="uid://cpmqq56dyjdg3" path="res://main_gui.tscn" id="2_7vd4m"]
+[ext_resource type="PackedScene" uid="uid://cpmqq56dyjdg3" path="res://scenes/main_gui.tscn" id="2_7vd4m"]
 [ext_resource type="PackedScene" uid="uid://lbgk1m4m8x08" path="res://scenes/exploration.tscn" id="3_5ablr"]
 [ext_resource type="PackedScene" uid="uid://kcab58t15je2" path="res://monsters/player.tscn" id="4_02imo"]
 [ext_resource type="Script" path="res://scenes/main_gui.gd" id="4_iobvo"]

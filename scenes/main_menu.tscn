@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://d4ciovkj4c71i"]
 
-[ext_resource type="Theme" uid="uid://bil0d0ae2ado6" path="res://ui_theme.tres" id="1_l2kal"]
+[ext_resource type="Theme" uid="uid://bwww1bs7q3brd" path="res://graphics/ui/ui_theme.tres" id="1_l2kal"]
 [ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_w42o2"]
 [ext_resource type="AudioStream" uid="uid://dq8wmhuobipv" path="res://sound/music/main menu.ogg" id="3_l0i4s"]
 
@@ -29,6 +29,7 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("1_l2kal")
 theme_override_font_sizes/font_size = 96
 text = "Merlin, le Roi"
 
