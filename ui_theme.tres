@@ -4,6 +4,7 @@
 font_names = PackedStringArray("Unifont")
 hinting = 0
 subpixel_positioning = 0
+multichannel_signed_distance_field = true
 
 [resource]
 default_font = SubResource("SystemFont_7x4dc")
