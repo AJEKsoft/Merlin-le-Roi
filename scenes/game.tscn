@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://mxs46dmuq38m"]
+[gd_scene load_steps=12 format=3 uid="uid://mxs46dmuq38m"]
 
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_4235k"]
 [ext_resource type="Theme" uid="uid://bwww1bs7q3brd" path="res://graphics/ui/ui_theme.tres" id="1_irrgr"]
@@ -7,6 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://kcab58t15je2" path="res://monsters/player.tscn" id="4_02imo"]
 [ext_resource type="AudioStream" uid="uid://kkwip3xnn2gx" path="res://sound/effects/door.wav" id="5_rafvx"]
 [ext_resource type="PackedScene" uid="uid://ib7s2txjkplv" path="res://spell_table.tscn" id="6_8kj7a"]
+[ext_resource type="Texture2D" uid="uid://dw7m0bdt41wta" path="res://graphics/ui/button_arrow_up_normal.png" id="8_lffop"]
+[ext_resource type="Texture2D" uid="uid://dib7gcwu5ntf4" path="res://graphics/ui/button_arrow_down_normal.png" id="9_a81f8"]
+[ext_resource type="Texture2D" uid="uid://6vxu37jc2cj0" path="res://graphics/ui/button_arrow_left_normal.png" id="10_33sen"]
+[ext_resource type="Texture2D" uid="uid://uu66iarbbde4" path="res://graphics/ui/button_arrow_right_normal.png" id="11_01kcn"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -75,14 +79,51 @@ render_target_update_mode = 4
 
 [node name="Player" parent="ExplorationViewport/SubViewport/Exploration" instance=ExtResource("4_02imo")]
 
-[node name="DoorSound" type="AudioStreamPlayer" parent="ExplorationViewport/SubViewport/Exploration"]
+[node name="TurnTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="PlayerTurnStarted" type="AudioStreamPlayer" parent="."]
+
+[node name="PlayerTurnEnded" type="AudioStreamPlayer" parent="."]
+
+[node name="DoorSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_rafvx")
 
+[node name="PlayerIllegalAction" type="AudioStreamPlayer" parent="."]
+
+[node name="ButtonUp" type="TouchScreenButton" parent="."]
+position = Vector2(54, 359)
+texture_normal = ExtResource("8_lffop")
+action = "dungeon_move_forward"
+
+[node name="ButtonDown" type="TouchScreenButton" parent="."]
+position = Vector2(55, 443)
+texture_normal = ExtResource("9_a81f8")
+action = "dungeon_move_backward"
+visibility_mode = 1
+
+[node name="ButtonLeft" type="TouchScreenButton" parent="."]
+position = Vector2(21, 402)
+texture_normal = ExtResource("10_33sen")
+action = "dungeon_turn_left"
+visibility_mode = 1
+
+[node name="ButtonRight" type="TouchScreenButton" parent="."]
+position = Vector2(92, 397)
+texture_normal = ExtResource("11_01kcn")
+action = "dungeon_turn_right"
+visibility_mode = 1
+
+[connection signal="player_turn_ended" from="." to="." method="_on_player_turn_ended"]
+[connection signal="player_turn_started" from="." to="." method="_on_player_turn_started"]
 [connection signal="cast_spell" from="HUD/SpellTable" to="ExplorationViewport/SubViewport/Exploration/Player" method="_on_spell_table_cast_spell"]
-[connection signal="action" from="ExplorationViewport/SubViewport/Exploration/Player" to="ExplorationViewport/SubViewport/Exploration" method="_on_player_action"]
+[connection signal="action" from="ExplorationViewport/SubViewport/Exploration/Player" to="." method="_on_player_action"]
 [connection signal="damaged" from="ExplorationViewport/SubViewport/Exploration/Player" to="." method="_on_player_damaged"]
-[connection signal="enter_tile" from="ExplorationViewport/SubViewport/Exploration/Player" to="ExplorationViewport/SubViewport/Exploration" method="_on_player_enter_tile"]
+[connection signal="death" from="ExplorationViewport/SubViewport/Exploration/Player" to="." method="_on_player_death"]
+[connection signal="enter_tile" from="ExplorationViewport/SubViewport/Exploration/Player" to="." method="_on_player_enter_tile"]
 [connection signal="lost_mana" from="ExplorationViewport/SubViewport/Exploration/Player" to="." method="_on_player_lost_mana"]
-[connection signal="request_move" from="ExplorationViewport/SubViewport/Exploration/Player" to="ExplorationViewport/SubViewport/Exploration" method="_on_player_request_move"]
+[connection signal="request_move" from="ExplorationViewport/SubViewport/Exploration/Player" to="." method="_on_player_request_move"]
 [connection signal="update_health" from="ExplorationViewport/SubViewport/Exploration/Player" to="." method="_on_player_update_health"]
 [connection signal="update_mana" from="ExplorationViewport/SubViewport/Exploration/Player" to="." method="_on_player_update_mana"]
+[connection signal="timeout" from="TurnTimer" to="." method="_on_turn_timer_timeout"]
