@@ -8,11 +8,14 @@ func _ready():
 	level = load("res://levels/level"+str(LevelState.current_level)+".tscn").instantiate()
 	level.name = "Dungeon"
 	add_child(level)
-	find_child("Player").place_at(Vector2i(0, 0))
+	$Player.place_at(Vector2i(0, 0))
+	$Dungeon.find_child("PlayerRemoteTransform").remote_path = $Player.get_path()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	var playerfollow = $Dungeon.find_child("PlayerFollow")
+	if playerfollow.progress_ratio < 0.99:
+		playerfollow.progress += delta
 
 func get_tile_at(pos : Vector2i):
 	var tile_no = level.find_child("Walls").get_cell_item(Vector3i(pos.x, 0, pos.y))

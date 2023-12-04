@@ -1,30 +1,32 @@
-[gd_scene load_steps=5 format=3 uid="uid://5x8xw48tbe2d"]
+[gd_scene load_steps=6 format=3 uid="uid://5x8xw48tbe2d"]
 
-[ext_resource type="Texture2D" uid="uid://2dtsc7r1s1b" path="res://graphics/ui/bars/delta.png" id="1_1k0dc"]
+[ext_resource type="Texture2D" uid="uid://ch7pqsqgmg2ds" path="res://graphics/ui/_archival/bars2/health_under.png" id="1_1fr71"]
+[ext_resource type="Texture2D" uid="uid://br2x15h0gawkw" path="res://graphics/ui/_archival/bars2/health_over.png" id="1_jqyke"]
+[ext_resource type="Texture2D" uid="uid://c0h3jom523xg3" path="res://graphics/ui/_archival/bars2/health_progress.png" id="2_yqqmw"]
 [ext_resource type="Script" path="res://better_progress.gd" id="3_1wqu7"]
-[ext_resource type="Texture2D" uid="uid://x2wktx241q6c" path="res://graphics/ui/bars/over.png" id="3_pk2tk"]
-[ext_resource type="Texture2D" uid="uid://bbxx22ixjwi76" path="res://graphics/ui/bars/progress.png" id="4_0nhyt"]
+[ext_resource type="Texture2D" uid="uid://c64l5e3ojhyv6" path="res://graphics/ui/_archival/bars2/progress_delta.png" id="4_1c0wf"]
 
 [node name="BetterProgress" type="TextureProgressBar"]
 texture_filter = 1
-offset_right = 48.0
-offset_bottom = 16.0
+offset_right = 64.0
+offset_bottom = 20.0
 size_flags_horizontal = 4
 step = 0.05
 value = 75.0
-texture_progress = ExtResource("1_1k0dc")
+texture_under = ExtResource("1_1fr71")
+texture_progress = ExtResource("4_1c0wf")
 script = ExtResource("3_1wqu7")
 
 [node name="progress" type="TextureProgressBar" parent="."]
 texture_filter = 1
 layout_mode = 1
-offset_right = 48.0
-offset_bottom = 16.0
+offset_right = 64.0
+offset_bottom = 20.0
 step = 0.05
 value = 50.0
 stretch_margin_left = 64
 stretch_margin_top = 21
 stretch_margin_right = 64
 stretch_margin_bottom = 21
-texture_over = ExtResource("3_pk2tk")
-texture_progress = ExtResource("4_0nhyt")
+texture_over = ExtResource("1_jqyke")
+texture_progress = ExtResource("2_yqqmw")
