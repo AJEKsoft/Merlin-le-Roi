@@ -1,6 +1,9 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bwww1bs7q3brd"]
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://bwww1bs7q3brd"]
 
 [ext_resource type="FontFile" uid="uid://c00mdk4mtu581" path="res://graphics/ui/fonts/Killig.ttf" id="1_jswbw"]
+
+[sub_resource type="SystemFont" id="SystemFont_xy5ib"]
+font_names = PackedStringArray("Unifont")
 
 [sub_resource type="SystemFont" id="SystemFont_7x4dc"]
 font_names = PackedStringArray("Unifont")
@@ -12,4 +15,4 @@ multichannel_signed_distance_field = true
 default_font = SubResource("SystemFont_7x4dc")
 /font_sizes/header1 = 16
 /fonts/merlin_title = ExtResource("1_jswbw")
-Label/fonts/font = ExtResource("1_jswbw")
+Label/fonts/font = SubResource("SystemFont_xy5ib")
