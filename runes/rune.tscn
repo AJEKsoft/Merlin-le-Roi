@@ -29,7 +29,7 @@ script = ExtResource("1_mtek6")
 
 [node name="particles" type="GPUParticles2D" parent="."]
 emitting = false
-amount = 100
+amount = 1
 process_material = SubResource("ParticleProcessMaterial_3b0h1")
 texture = ExtResource("2_t017n")
 

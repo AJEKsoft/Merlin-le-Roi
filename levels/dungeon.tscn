@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://dk82bao3hl5xt"]
+[gd_scene load_steps=9 format=3 uid="uid://dk82bao3hl5xt"]
 
+[ext_resource type="Script" path="res://levels/dungeon.gd" id="1_j7p2e"]
 [ext_resource type="MeshLibrary" uid="uid://d0fewnvqwxyhm" path="res://graphics/3d/wall_library.tres" id="1_u58ir"]
 [ext_resource type="Material" uid="uid://cdeo6sb8t63fw" path="res://graphics/materials/gravel/gravel_roof.tres" id="2_70ec6"]
 [ext_resource type="Material" uid="uid://bj5futlhqepgr" path="res://graphics/materials/wood/wood_roof.tres" id="3_gooeq"]
@@ -23,6 +24,7 @@ fog_light_color = Color(0.305882, 0.317647, 0.235294, 1)
 fog_density = 0.25
 
 [node name="Dungeon" type="Node3D"]
+script = ExtResource("1_j7p2e")
 
 [node name="Walls" type="GridMap" parent="."]
 mesh_library = ExtResource("1_u58ir")

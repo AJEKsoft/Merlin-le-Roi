@@ -1,14 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cthu347q4mf0t"]
+[gd_scene load_steps=3 format=3 uid="uid://cthu347q4mf0t"]
 
 [ext_resource type="PackedScene" uid="uid://dk82bao3hl5xt" path="res://levels/dungeon.tscn" id="1_emypu"]
 [ext_resource type="PackedScene" uid="uid://bmylpptppsrvm" path="res://monsters/amethyst_deceiver.tscn" id="2_ggy2y"]
-
-[sub_resource type="Curve3D" id="Curve3D_oul8t"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1.20262, 0, 0, 0, 0, 0, 0, 0, 0, 1.50156, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 2, 0, 2, 0, 0, 0, 0, 0, 0, 2, 0, 0),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
-}
-point_count = 7
 
 [node name="Dungeon" instance=ExtResource("1_emypu")]
 
@@ -34,12 +27,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -1)
 
 [node name="Amethyst Deceiver5" parent="." index="8" instance=ExtResource("2_ggy2y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -6)
-
-[node name="PlayerPath" type="Path3D" parent="." index="9"]
-curve = SubResource("Curve3D_oul8t")
-
-[node name="PlayerFollow" type="PathFollow3D" parent="PlayerPath" index="0"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
-
-[node name="PlayerRemoteTransform" type="RemoteTransform3D" parent="PlayerPath/PlayerFollow" index="0"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)

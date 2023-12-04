@@ -37,7 +37,7 @@ script = ExtResource("2_waarx")
 
 [node name="LinkParticles" type="GPUParticles2D" parent="runes_circle"]
 emitting = false
-amount = 50
+amount = 1
 process_material = SubResource("ParticleProcessMaterial_71sjh")
 texture = ExtResource("15_qpg21")
 
