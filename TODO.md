@@ -10,6 +10,14 @@ Graphics
 Audio
 -----
 
+- [X] Turn begin
+- [X] Turn end
+- [ ] Player gets hurt
+- [ ] Finished level jingle
+- [ ] Player death
+- [ ] UI button press
+- [ ] Illegal action
+
 Random ideas
 ------------
 
