@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://tt8ufiejh2jd"]
+
+[ext_resource type="PackedScene" uid="uid://5x8xw48tbe2d" path="res://better_progress.tscn" id="1_5p44q"]
+[ext_resource type="Theme" uid="uid://bwww1bs7q3brd" path="res://graphics/ui/ui_theme.tres" id="1_ct74p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1x51o"]
+
+[node name="ui" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("1_ct74p")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1x51o")
+
+[node name="spellname" type="Label" parent="."]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="bottomarea" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 8
+alignment = 1
+
+[node name="mana" type="VBoxContainer" parent="bottomarea"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="bottomarea/mana"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "Mana
+"
+
+[node name="player-mana-bar" parent="bottomarea/mana" instance=ExtResource("1_5p44q")]
+layout_mode = 2
+tint_progress = Color(0.509804, 0.184314, 1, 1)
+
+[node name="health" type="VBoxContainer" parent="bottomarea"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="bottomarea/health"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Health"
+horizontal_alignment = 1
+
+[node name="player-health-bar" parent="bottomarea/health" instance=ExtResource("1_5p44q")]
+layout_mode = 2
+tint_progress = Color(1, 0.207843, 0.109804, 1)

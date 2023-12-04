@@ -16,6 +16,7 @@ func _process(delta):
 	var playerfollow = $Dungeon.find_child("PlayerFollow")
 	if playerfollow.progress_ratio < 0.99:
 		playerfollow.progress += delta
+		playerfollow.find_child("PlayerRemoteTransform").position.y = sin(playerfollow.progress * PI * 3) / 50
 
 func get_tile_at(pos : Vector2i):
 	var tile_no = level.find_child("Walls").get_cell_item(Vector3i(pos.x, 0, pos.y))
