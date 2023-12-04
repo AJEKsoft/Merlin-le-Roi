@@ -9,7 +9,8 @@ func _draw():
 	# get sequence from parent
 	var sequence = get_parent().current_sequence
 	# draw a line from each rune to the next, and to the mouse cursor
-	if sequence.size() > 0:
+	# FIXME: glitches the game on Android
+	if sequence.size() > 0 and false:
 		var firstRune = find_child(sequence[0])
 		var color = firstRune.find_child("image").modulate
 		var thickness = 10 * sequence.size()

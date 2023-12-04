@@ -93,24 +93,28 @@ stream = ExtResource("5_rafvx")
 [node name="PlayerIllegalAction" type="AudioStreamPlayer" parent="."]
 
 [node name="ButtonUp" type="TouchScreenButton" parent="."]
-position = Vector2(54, 359)
+position = Vector2(62, 330)
+scale = Vector2(3, 2.756)
 texture_normal = ExtResource("8_lffop")
 action = "dungeon_move_forward"
 
 [node name="ButtonDown" type="TouchScreenButton" parent="."]
-position = Vector2(55, 443)
+position = Vector2(62, 422)
+scale = Vector2(3, 3)
 texture_normal = ExtResource("9_a81f8")
 action = "dungeon_move_backward"
 visibility_mode = 1
 
 [node name="ButtonLeft" type="TouchScreenButton" parent="."]
-position = Vector2(21, 402)
+position = Vector2(14, 374)
+scale = Vector2(3, 3)
 texture_normal = ExtResource("10_33sen")
 action = "dungeon_turn_left"
 visibility_mode = 1
 
 [node name="ButtonRight" type="TouchScreenButton" parent="."]
-position = Vector2(92, 397)
+position = Vector2(110, 374)
+scale = Vector2(3, 3)
 texture_normal = ExtResource("11_01kcn")
 action = "dungeon_turn_right"
 visibility_mode = 1
